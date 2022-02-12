@@ -1,0 +1,22 @@
+[
+  {
+    "id": "5edf3bd0-dc81-48e5-afff-5d0d0efd3e61",
+    "name": "*facebook.com",
+    "enabled": true
+  },
+  {
+    "id": "c1327543-a7f1-4d1a-bfb9-f3c86045d9a6",
+    "name": "*instagram.com",
+    "enabled": true
+  },
+  {
+    "id": "02d7b116-b24b-4f1f-a09d-c9fcf134e188",
+    "name": "*twitter.com",
+    "enabled": true
+  },
+  {
+    "id": "9a869bbf-e477-4580-bb94-ff1ecbca7e66",
+    "name": "*reddit.com",
+    "enabled": true
+  }
+]

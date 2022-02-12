@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B3C5B1BA09916A76623CC7CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */; };
+		B3C5B33555D902922F4D1377 /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
+		B3C5B8CFB43218731C9A9255 /* ExtensionDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */; };
+		F7E3326227ADAD9600333EDC /* BlockaliciousApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3326127ADAD9600333EDC /* BlockaliciousApp.swift */; };
+		F7E3326627ADAD9700333EDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7E3326527ADAD9700333EDC /* Assets.xcassets */; };
+		F7E3327227ADAE7000333EDC /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
+		F7E3327527ADB86700333EDC /* BlockedDomainsVim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327427ADB86700333EDC /* BlockedDomainsVim.swift */; };
+		F7E3327827ADB89200333EDC /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327727ADB89200333EDC /* Decoding.swift */; };
+		F7E3327B27ADBDCA00333EDC /* DomainsPreseed.json in Resources */ = {isa = PBXBuildFile; fileRef = F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */; };
+		F7E3328327AE3B2E00333EDC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E3328227AE3B2E00333EDC /* Cocoa.framework */; };
+		F7E3328827AE3B2E00333EDC /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */; };
+		F7E3328D27AE3B2E00333EDC /* Content Blocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F7E3328027AE3B2E00333EDC /* Content Blocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7E3328B27AE3B2E00333EDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7E3325627ADAD9600333EDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7E3327F27AE3B2E00333EDC;
+			remoteInfo = "Content Blocker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F7E3328E27AE3B2E00333EDC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F7E3328D27AE3B2E00333EDC /* Content Blocker.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockerListWriter.swift; sourceTree = "<group>"; };
+		B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDisabledView.swift; sourceTree = "<group>"; };
+		B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F7E0495B27B81DBA00EC9ABF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F7E3325E27ADAD9600333EDC /* Blockalicious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockalicious.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7E3326127ADAD9600333EDC /* BlockaliciousApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockaliciousApp.swift; sourceTree = "<group>"; };
+		F7E3326527ADAD9700333EDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7E3326A27ADAD9700333EDC /* Blockalicious.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blockalicious.entitlements; sourceTree = "<group>"; };
+		F7E3327127ADAE7000333EDC /* BlockedDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedDomain.swift; sourceTree = "<group>"; };
+		F7E3327427ADB86700333EDC /* BlockedDomainsVim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedDomainsVim.swift; sourceTree = "<group>"; };
+		F7E3327727ADB89200333EDC /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
+		F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DomainsPreseed.json; sourceTree = "<group>"; };
+		F7E3328027AE3B2E00333EDC /* Content Blocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Content Blocker.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7E3328227AE3B2E00333EDC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
+		F7E3328927AE3B2E00333EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E3328A27AE3B2E00333EDC /* Content_Blocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Content_Blocker.entitlements; sourceTree = "<group>"; };
+		F7E3329227AE3C5300333EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7E3325B27ADAD9600333EDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7E3327D27AE3B2E00333EDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E3328327AE3B2E00333EDC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3C5B1261B48B90677A100FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */,
+				B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F7E3325527ADAD9600333EDC = {
+			isa = PBXGroup;
+			children = (
+				F7E0495B27B81DBA00EC9ABF /* README.md */,
+				F7E3326027ADAD9600333EDC /* Blockalicious */,
+				F7E3328427AE3B2E00333EDC /* Content Blocker */,
+				F7E3328127AE3B2E00333EDC /* Frameworks */,
+				F7E3325F27ADAD9600333EDC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7E3325F27ADAD9600333EDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7E3325E27ADAD9600333EDC /* Blockalicious.app */,
+				F7E3328027AE3B2E00333EDC /* Content Blocker.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7E3326027ADAD9600333EDC /* Blockalicious */ = {
+			isa = PBXGroup;
+			children = (
+				F7E3327927ADBDA800333EDC /* Assets */,
+				F7E3327627ADB88400333EDC /* Extensions */,
+				F7E3327027ADAE6000333EDC /* Models */,
+				F7E3327327ADB85900333EDC /* View Models */,
+				B3C5B1261B48B90677A100FF /* Views */,
+				F7E3326127ADAD9600333EDC /* BlockaliciousApp.swift */,
+				F7E3326527ADAD9700333EDC /* Assets.xcassets */,
+				F7E3326A27ADAD9700333EDC /* Blockalicious.entitlements */,
+				F7E3329227AE3C5300333EDC /* Info.plist */,
+			);
+			path = Blockalicious;
+			sourceTree = "<group>";
+		};
+		F7E3327027ADAE6000333EDC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7E3327127ADAE7000333EDC /* BlockedDomain.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F7E3327327ADB85900333EDC /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7E3327427ADB86700333EDC /* BlockedDomainsVim.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		F7E3327627ADB88400333EDC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F7E3327727ADB89200333EDC /* Decoding.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F7E3327927ADBDA800333EDC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */,
+				B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F7E3328127AE3B2E00333EDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7E3328227AE3B2E00333EDC /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7E3328427AE3B2E00333EDC /* Content Blocker */ = {
+			isa = PBXGroup;
+			children = (
+				F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */,
+				F7E3328927AE3B2E00333EDC /* Info.plist */,
+				F7E3328A27AE3B2E00333EDC /* Content_Blocker.entitlements */,
+			);
+			path = "Content Blocker";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7E3325D27ADAD9600333EDC /* Blockalicious */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7E3326D27ADAD9700333EDC /* Build configuration list for PBXNativeTarget "Blockalicious" */;
+			buildPhases = (
+				F7E3325A27ADAD9600333EDC /* Sources */,
+				F7E3325B27ADAD9600333EDC /* Frameworks */,
+				F7E3325C27ADAD9600333EDC /* Resources */,
+				F7E3328E27AE3B2E00333EDC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7E3328C27AE3B2E00333EDC /* PBXTargetDependency */,
+			);
+			name = Blockalicious;
+			productName = Blockalicious;
+			productReference = F7E3325E27ADAD9600333EDC /* Blockalicious.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7E3327F27AE3B2E00333EDC /* Content Blocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7E3329127AE3B2E00333EDC /* Build configuration list for PBXNativeTarget "Content Blocker" */;
+			buildPhases = (
+				F7E3327C27AE3B2E00333EDC /* Sources */,
+				F7E3327D27AE3B2E00333EDC /* Frameworks */,
+				F7E3327E27AE3B2E00333EDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Content Blocker";
+			productName = "Content Blocker";
+			productReference = F7E3328027AE3B2E00333EDC /* Content Blocker.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7E3325627ADAD9600333EDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					F7E3325D27ADAD9600333EDC = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					F7E3327F27AE3B2E00333EDC = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F7E3325927ADAD9600333EDC /* Build configuration list for PBXProject "Blockalicious" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7E3325527ADAD9600333EDC;
+			productRefGroup = F7E3325F27ADAD9600333EDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7E3325D27ADAD9600333EDC /* Blockalicious */,
+				F7E3327F27AE3B2E00333EDC /* Content Blocker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7E3325C27ADAD9600333EDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E3327B27ADBDCA00333EDC /* DomainsPreseed.json in Resources */,
+				F7E3326627ADAD9700333EDC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7E3327E27AE3B2E00333EDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7E3325A27ADAD9600333EDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E3327827ADB89200333EDC /* Decoding.swift in Sources */,
+				F7E3327527ADB86700333EDC /* BlockedDomainsVim.swift in Sources */,
+				F7E3326227ADAD9600333EDC /* BlockaliciousApp.swift in Sources */,
+				F7E3327227ADAE7000333EDC /* BlockedDomain.swift in Sources */,
+				B3C5B33555D902922F4D1377 /* BlockerListWriter.swift in Sources */,
+				B3C5B1BA09916A76623CC7CF /* ContentView.swift in Sources */,
+				B3C5B8CFB43218731C9A9255 /* ExtensionDisabledView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7E3327C27AE3B2E00333EDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E3328827AE3B2E00333EDC /* ContentBlockerRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7E3328C27AE3B2E00333EDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7E3327F27AE3B2E00333EDC /* Content Blocker */;
+			targetProxy = F7E3328B27AE3B2E00333EDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F7E3326B27ADAD9700333EDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F7E3326C27ADAD9700333EDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F7E3326E27ADAD9700333EDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Blockalicious/Blockalicious.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BFJQQT3YDX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Blockalicious/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 2022.1;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F7E3326F27ADAD9700333EDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Blockalicious/Blockalicious.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BFJQQT3YDX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Blockalicious/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 2022.1;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F7E3328F27AE3B2E00333EDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BFJQQT3YDX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Content Blocker/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Blockalicious;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "2022 Vyacheslav Pukhanov";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 2022.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F7E3329027AE3B2E00333EDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BFJQQT3YDX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Content Blocker/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Blockalicious;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "2022 Vyacheslav Pukhanov";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 2022.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7E3325927ADAD9600333EDC /* Build configuration list for PBXProject "Blockalicious" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7E3326B27ADAD9700333EDC /* Debug */,
+				F7E3326C27ADAD9700333EDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7E3326D27ADAD9700333EDC /* Build configuration list for PBXNativeTarget "Blockalicious" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7E3326E27ADAD9700333EDC /* Debug */,
+				F7E3326F27ADAD9700333EDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7E3329127AE3B2E00333EDC /* Build configuration list for PBXNativeTarget "Content Blocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7E3328F27AE3B2E00333EDC /* Debug */,
+				F7E3329027AE3B2E00333EDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7E3325627ADAD9600333EDC /* Project object */;
+}
