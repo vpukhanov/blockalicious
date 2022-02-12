@@ -50,6 +50,7 @@
 		B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDisabledView.swift; sourceTree = "<group>"; };
 		B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F7E0495B27B81DBA00EC9ABF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F7E0495C27B81F1F00EC9ABF /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		F7E3325E27ADAD9600333EDC /* Blockalicious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockalicious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E3326127ADAD9600333EDC /* BlockaliciousApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockaliciousApp.swift; sourceTree = "<group>"; };
 		F7E3326527ADAD9700333EDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				F7E0495B27B81DBA00EC9ABF /* README.md */,
+				F7E0495C27B81F1F00EC9ABF /* LICENSE.md */,
 				F7E3326027ADAD9600333EDC /* Blockalicious */,
 				F7E3328427AE3B2E00333EDC /* Content Blocker */,
 				F7E3328127AE3B2E00333EDC /* Frameworks */,
