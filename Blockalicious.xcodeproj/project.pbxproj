@@ -496,7 +496,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -530,7 +530,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -559,7 +559,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious-iOS.Content-Blocker-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -588,7 +588,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious-iOS.Content-Blocker-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -737,7 +737,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -768,7 +768,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -795,7 +795,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -823,7 +823,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
