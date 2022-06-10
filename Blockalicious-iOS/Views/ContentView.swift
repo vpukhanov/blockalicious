@@ -10,21 +10,38 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject private var blockedDomainsVim: BlockedDomainsVim
     
+    @State private var domainField = "*example.com"
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach($blockedDomainsVim.domains) { $domain in
+                Section {
                     HStack {
-                        Text($domain.name.wrappedValue)
+                        TextField("Domain to block", text: $domainField)
                         
                         Spacer()
                         
-                        Toggle("Active", isOn: $domain.enabled)
-                            .labelsHidden()
+                        Button {} label: {
+                            Label("Add", systemImage: "plus")
+                        }
                     }
                 }
-                .onDelete(perform: delete)
+                
+                Section {
+                    ForEach($blockedDomainsVim.domains) { $domain in
+                        HStack {
+                            Text($domain.name.wrappedValue)
+                            
+                            Spacer()
+                            
+                            Toggle("Active", isOn: $domain.enabled)
+                                .labelsHidden()
+                        }
+                    }
+                    .onDelete(perform: delete)
+                }
             }
+            .toolbar { EditButton() }
             .navigationTitle("Blocklist")
         }
     }
