@@ -12,6 +12,11 @@
 		11BF5B0A2853783B00E3490A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BF5B092853783B00E3490A /* Assets.xcassets */; };
 		11BF5B24285378E100E3490A /* Content Blocker-iOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11BF5B282853791200E3490A /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */; };
+		11BF5B2B28537DCD00E3490A /* DomainsPreseed.json in Resources */ = {isa = PBXBuildFile; fileRef = F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */; };
+		11BF5B2C28537DD500E3490A /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
+		11BF5B2D28537DDF00E3490A /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
+		11BF5B2E28537DE300E3490A /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327727ADB89200333EDC /* Decoding.swift */; };
+		11BF5B2F28537DE800E3490A /* BlockedDomainsVim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327427ADB86700333EDC /* BlockedDomainsVim.swift */; };
 		B3C5B1BA09916A76623CC7CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */; };
 		B3C5B33555D902922F4D1377 /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
 		B3C5B8CFB43218731C9A9255 /* ExtensionDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */; };
@@ -134,13 +139,21 @@
 		11BF5B042853783A00E3490A /* Blockalicious-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				11BF5B2A28537B7200E3490A /* Views */,
 				11BF5B162853787500E3490A /* Blockalicious-iOS.entitlements */,
 				11BF5B112853785D00E3490A /* Info.plist */,
 				11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */,
-				11BF5B072853783A00E3490A /* ContentView.swift */,
 				11BF5B092853783B00E3490A /* Assets.xcassets */,
 			);
 			path = "Blockalicious-iOS";
+			sourceTree = "<group>";
+		};
+		11BF5B2A28537B7200E3490A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11BF5B072853783A00E3490A /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B3C5B1261B48B90677A100FF /* Views */ = {
@@ -369,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BF5B2B28537DCD00E3490A /* DomainsPreseed.json in Resources */,
 				11BF5B0A2853783B00E3490A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,7 +417,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BF5B2E28537DE300E3490A /* Decoding.swift in Sources */,
 				11BF5B082853783A00E3490A /* ContentView.swift in Sources */,
+				11BF5B2C28537DD500E3490A /* BlockerListWriter.swift in Sources */,
+				11BF5B2F28537DE800E3490A /* BlockedDomainsVim.swift in Sources */,
+				11BF5B2D28537DDF00E3490A /* BlockedDomain.swift in Sources */,
 				11BF5B062853783A00E3490A /* Blockalicious_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +485,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Blockalicious-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Blockalicious;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -500,6 +519,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Blockalicious-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Blockalicious;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
