@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11BF5B062853783A00E3490A /* Blockalicious_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */; };
+		11BF5B082853783A00E3490A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5B072853783A00E3490A /* ContentView.swift */; };
+		11BF5B0A2853783B00E3490A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BF5B092853783B00E3490A /* Assets.xcassets */; };
+		11BF5B24285378E100E3490A /* Content Blocker-iOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11BF5B282853791200E3490A /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */; };
+		11BF5B2B28537DCD00E3490A /* DomainsPreseed.json in Resources */ = {isa = PBXBuildFile; fileRef = F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */; };
+		11BF5B2C28537DD500E3490A /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
+		11BF5B2D28537DDF00E3490A /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
+		11BF5B2E28537DE300E3490A /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327727ADB89200333EDC /* Decoding.swift */; };
+		11BF5B2F28537DE800E3490A /* BlockedDomainsVim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327427ADB86700333EDC /* BlockedDomainsVim.swift */; };
 		B3C5B1BA09916A76623CC7CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */; };
 		B3C5B33555D902922F4D1377 /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
 		B3C5B8CFB43218731C9A9255 /* ExtensionDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */; };
@@ -22,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		11BF5B22285378E100E3490A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7E3325627ADAD9600333EDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11BF5B1A285378E100E3490A;
+			remoteInfo = "Content Blocker-iOS";
+		};
 		F7E3328B27AE3B2E00333EDC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F7E3325627ADAD9600333EDC /* Project object */;
@@ -32,6 +49,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		11BF5B152853786500E3490A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				11BF5B24285378E100E3490A /* Content Blocker-iOS.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7E3328E27AE3B2E00333EDC /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +74,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11BF5B032853783A00E3490A /* Blockalicious-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blockalicious-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockalicious_iOSApp.swift; sourceTree = "<group>"; };
+		11BF5B072853783A00E3490A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		11BF5B092853783B00E3490A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11BF5B112853785D00E3490A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		11BF5B162853787500E3490A /* Blockalicious-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Blockalicious-iOS.entitlements"; sourceTree = "<group>"; };
+		11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Content Blocker-iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11BF5B292853792500E3490A /* Content Blocker-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Content Blocker-iOS.entitlements"; sourceTree = "<group>"; };
 		B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockerListWriter.swift; sourceTree = "<group>"; };
 		B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDisabledView.swift; sourceTree = "<group>"; };
 		B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +104,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		11BF5B002853783A00E3490A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11BF5B18285378E100E3490A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7E3325B27ADAD9600333EDC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,6 +136,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11BF5B042853783A00E3490A /* Blockalicious-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				11BF5B2A28537B7200E3490A /* Views */,
+				11BF5B162853787500E3490A /* Blockalicious-iOS.entitlements */,
+				11BF5B112853785D00E3490A /* Info.plist */,
+				11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */,
+				11BF5B092853783B00E3490A /* Assets.xcassets */,
+			);
+			path = "Blockalicious-iOS";
+			sourceTree = "<group>";
+		};
+		11BF5B2A28537B7200E3490A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11BF5B072853783A00E3490A /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B3C5B1261B48B90677A100FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +171,7 @@
 				F7E0495B27B81DBA00EC9ABF /* README.md */,
 				F7E0495C27B81F1F00EC9ABF /* LICENSE.md */,
 				F7E3326027ADAD9600333EDC /* Blockalicious */,
+				11BF5B042853783A00E3490A /* Blockalicious-iOS */,
 				F7E3328427AE3B2E00333EDC /* Content Blocker */,
 				F7E3328127AE3B2E00333EDC /* Frameworks */,
 				F7E3325F27ADAD9600333EDC /* Products */,
@@ -112,6 +183,8 @@
 			children = (
 				F7E3325E27ADAD9600333EDC /* Blockalicious.app */,
 				F7E3328027AE3B2E00333EDC /* Content Blocker.appex */,
+				11BF5B032853783A00E3490A /* Blockalicious-iOS.app */,
+				11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +252,7 @@
 				F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */,
 				F7E3328927AE3B2E00333EDC /* Info.plist */,
 				F7E3328A27AE3B2E00333EDC /* Content_Blocker.entitlements */,
+				11BF5B292853792500E3490A /* Content Blocker-iOS.entitlements */,
 			);
 			path = "Content Blocker";
 			sourceTree = "<group>";
@@ -186,6 +260,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		11BF5B022853783A00E3490A /* Blockalicious-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11BF5B102853783B00E3490A /* Build configuration list for PBXNativeTarget "Blockalicious-iOS" */;
+			buildPhases = (
+				11BF5AFF2853783A00E3490A /* Sources */,
+				11BF5B002853783A00E3490A /* Frameworks */,
+				11BF5B012853783A00E3490A /* Resources */,
+				11BF5B152853786500E3490A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11BF5B23285378E100E3490A /* PBXTargetDependency */,
+			);
+			name = "Blockalicious-iOS";
+			productName = "Blockalicious-iOS";
+			productReference = 11BF5B032853783A00E3490A /* Blockalicious-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11BF5B1A285378E100E3490A /* Content Blocker-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11BF5B25285378E100E3490A /* Build configuration list for PBXNativeTarget "Content Blocker-iOS" */;
+			buildPhases = (
+				11BF5B17285378E100E3490A /* Sources */,
+				11BF5B18285378E100E3490A /* Frameworks */,
+				11BF5B19285378E100E3490A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Content Blocker-iOS";
+			productName = "Content Blocker-iOS";
+			productReference = 11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		F7E3325D27ADAD9600333EDC /* Blockalicious */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7E3326D27ADAD9700333EDC /* Build configuration list for PBXNativeTarget "Blockalicious" */;
@@ -229,9 +339,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					11BF5B022853783A00E3490A = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					11BF5B1A285378E100E3490A = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					F7E3325D27ADAD9600333EDC = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -254,12 +370,30 @@
 			projectRoot = "";
 			targets = (
 				F7E3325D27ADAD9600333EDC /* Blockalicious */,
+				11BF5B022853783A00E3490A /* Blockalicious-iOS */,
 				F7E3327F27AE3B2E00333EDC /* Content Blocker */,
+				11BF5B1A285378E100E3490A /* Content Blocker-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		11BF5B012853783A00E3490A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11BF5B2B28537DCD00E3490A /* DomainsPreseed.json in Resources */,
+				11BF5B0A2853783B00E3490A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11BF5B19285378E100E3490A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7E3325C27ADAD9600333EDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +413,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		11BF5AFF2853783A00E3490A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11BF5B2E28537DE300E3490A /* Decoding.swift in Sources */,
+				11BF5B082853783A00E3490A /* ContentView.swift in Sources */,
+				11BF5B2C28537DD500E3490A /* BlockerListWriter.swift in Sources */,
+				11BF5B2F28537DE800E3490A /* BlockedDomainsVim.swift in Sources */,
+				11BF5B2D28537DDF00E3490A /* BlockedDomain.swift in Sources */,
+				11BF5B062853783A00E3490A /* Blockalicious_iOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11BF5B17285378E100E3490A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11BF5B282853791200E3490A /* ContentBlockerRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7E3325A27ADAD9600333EDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +459,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		11BF5B23285378E100E3490A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11BF5B1A285378E100E3490A /* Content Blocker-iOS */;
+			targetProxy = 11BF5B22285378E100E3490A /* PBXContainerItemProxy */;
+		};
 		F7E3328C27AE3B2E00333EDC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F7E3327F27AE3B2E00333EDC /* Content Blocker */;
@@ -312,6 +472,134 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		11BF5B0E2853783B00E3490A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Blockalicious-iOS/Blockalicious-iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BFJQQT3YDX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Blockalicious-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Blockalicious;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2022.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11BF5B0F2853783B00E3490A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Blockalicious-iOS/Blockalicious-iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BFJQQT3YDX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Blockalicious-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Blockalicious;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2022.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11BF5B26285378E100E3490A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content Blocker-iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BFJQQT3YDX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Content Blocker/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Content Blocker-iOS";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2022.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious-iOS.Content-Blocker-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11BF5B27285378E100E3490A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content Blocker-iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BFJQQT3YDX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Content Blocker/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Content Blocker-iOS";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2022.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious-iOS.Content-Blocker-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		F7E3326B27ADAD9700333EDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,7 +737,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -480,7 +768,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -507,7 +795,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -535,7 +823,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2022.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -548,6 +836,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		11BF5B102853783B00E3490A /* Build configuration list for PBXNativeTarget "Blockalicious-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11BF5B0E2853783B00E3490A /* Debug */,
+				11BF5B0F2853783B00E3490A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11BF5B25285378E100E3490A /* Build configuration list for PBXNativeTarget "Content Blocker-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11BF5B26285378E100E3490A /* Debug */,
+				11BF5B27285378E100E3490A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F7E3325927ADAD9600333EDC /* Build configuration list for PBXProject "Blockalicious" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

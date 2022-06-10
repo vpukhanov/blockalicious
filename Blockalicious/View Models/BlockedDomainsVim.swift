@@ -27,7 +27,11 @@ class BlockedDomainsVim: ObservableObject {
     }
 
     @discardableResult func add() -> BlockedDomain.ID {
-        let domain = BlockedDomain(name: "*example.com")
+        add(domain: "*example.com")
+    }
+    
+    @discardableResult func add(domain: String) -> BlockedDomain.ID {
+        let domain = BlockedDomain(name: domain)
         domains.append(domain)
         return domain.id
     }
@@ -50,7 +54,11 @@ class BlockedDomainsVim: ObservableObject {
         try? data.write(to: url)
         BlockerListWriter.shared.write(domains: domains)
         
-        SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: "ru.pukhanov.Blockalicious.Content-Blocker") { state, _ in
+        updateExtensionState()
+    }
+    
+    func updateExtensionState() {
+        SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: BlockerListWriter.contentBlockerBundleId) { state, _ in
             if let state = state {
                 DispatchQueue.main.async {
                     self.contentBlockerEnabled = state.isEnabled
