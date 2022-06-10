@@ -54,6 +54,10 @@ class BlockedDomainsVim: ObservableObject {
         try? data.write(to: url)
         BlockerListWriter.shared.write(domains: domains)
         
+        updateExtensionState()
+    }
+    
+    func updateExtensionState() {
         SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: BlockerListWriter.contentBlockerBundleId) { state, _ in
             if let state = state {
                 DispatchQueue.main.async {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
+    
     @EnvironmentObject private var blockedDomainsVim: BlockedDomainsVim
     
     @State private var domainField = "*example.com"
@@ -15,6 +17,19 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
+                if !blockedDomainsVim.contentBlockerEnabled {
+                    Section {
+                        (
+                            Text("Safari extension is currently disabled").bold() +
+                            Text("\n\nEnable the Blockalicious extension for the blocking rules to take effect.") +
+                            Text("\n\nGo to Settings > Safari > Extensions, toggle Blockalicious on")
+                        )
+                        .padding(.vertical, 6)
+                        
+                        Button("Go to Settings…", action: goToSafariSettings)
+                    }
+                }
+                
                 Section {
                     HStack {
                         domainTextField
@@ -43,6 +58,11 @@ struct ContentView: View {
             }
             .toolbar { EditButton() }
             .navigationTitle("Blockalicious")
+            .onChange(of: scenePhase) { phase in
+                if phase == .active {
+                    blockedDomainsVim.updateExtensionState()
+                }
+            }
         }
     }
     
@@ -71,5 +91,9 @@ struct ContentView: View {
             let domain = blockedDomainsVim.domains[index]
             blockedDomainsVim.delete(withID: domain.id)
         }
+    }
+    
+    private func goToSafariSettings() {
+        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
     }
 }
