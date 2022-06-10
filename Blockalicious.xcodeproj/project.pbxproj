@@ -17,6 +17,10 @@
 		11BF5B2D28537DDF00E3490A /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
 		11BF5B2E28537DE300E3490A /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327727ADB89200333EDC /* Decoding.swift */; };
 		11BF5B2F28537DE800E3490A /* BlockedDomainsVim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327427ADB86700333EDC /* BlockedDomainsVim.swift */; };
+		11BF5B302853A45B00E3490A /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
+		11BF5B312853A45B00E3490A /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
+		11BF5B322853A46C00E3490A /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
+		11BF5B332853A46D00E3490A /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
 		B3C5B1BA09916A76623CC7CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */; };
 		B3C5B33555D902922F4D1377 /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
 		B3C5B8CFB43218731C9A9255 /* ExtensionDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */; };
@@ -431,6 +435,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				11BF5B282853791200E3490A /* ContentBlockerRequestHandler.swift in Sources */,
+				11BF5B312853A45B00E3490A /* BlockerListWriter.swift in Sources */,
+				11BF5B332853A46D00E3490A /* BlockedDomain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +459,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7E3328827AE3B2E00333EDC /* ContentBlockerRequestHandler.swift in Sources */,
+				11BF5B302853A45B00E3490A /* BlockerListWriter.swift in Sources */,
+				11BF5B322853A46C00E3490A /* BlockedDomain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

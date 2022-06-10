@@ -4,9 +4,11 @@ import SafariServices
 class BlockerListWriter {
     #if os(iOS)
     static let contentBlockerBundleId = "ru.pukhanov.Blockalicious.Content-Blocker-iOS"
+    static let securityGroupId = "group.BFJQQT3YDX.Blockalicious"
     #endif
     #if os(macOS)
     static let contentBlockerBundleId = "ru.pukhanov.Blockalicious.Content-Blocker"
+    static let securityGroupId = "BFJQQT3YDX.Blockalicious"
     #endif
     
     static let shared = BlockerListWriter()
@@ -22,7 +24,7 @@ class BlockerListWriter {
             fatalError("Unable to json-encode \(names).")
         }
         guard let fileUrl = FileManager.default.containerURL(
-                forSecurityApplicationGroupIdentifier: "BFJQQT3YDX.Blockalicious"
+            forSecurityApplicationGroupIdentifier: BlockerListWriter.securityGroupId
         )?.appendingPathComponent("BlockList.json", isDirectory: false) else {
             fatalError("Unable to get app group container url.")
         }

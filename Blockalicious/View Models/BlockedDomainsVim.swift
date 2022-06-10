@@ -12,7 +12,7 @@ class BlockedDomainsVim: ObservableObject {
         // Load domains from app group container or from preseed file
         domains =
                 FileManager.default
-                           .decode([BlockedDomain].self, from: "Domains.json", in: "BFJQQT3YDX.Blockalicious")
+            .decode([BlockedDomain].self, from: "Domains.json", in: BlockerListWriter.securityGroupId)
                 ?? Bundle.main.decode([BlockedDomain].self, from: "DomainsPreseed.json")
                 ?? []
 
@@ -47,8 +47,8 @@ class BlockedDomainsVim: ObservableObject {
             fatalError("Could not encode blocked domains.")
         }
         guard let url = FileManager.default.containerURL(
-                forSecurityApplicationGroupIdentifier: "BFJQQT3YDX.Blockalicious")?
-                                   .appendingPathComponent("Domains.json", isDirectory: false) else {
+            forSecurityApplicationGroupIdentifier: BlockerListWriter.securityGroupId)?
+               .appendingPathComponent("Domains.json", isDirectory: false) else {
             fatalError("Could not request url for app group.")
         }
         try? data.write(to: url)
