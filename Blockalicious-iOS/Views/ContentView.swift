@@ -56,12 +56,13 @@ struct ContentView: View {
                     .onDelete(perform: delete)
                 }
             }
-            .toolbar { EditButton() }
             .navigationTitle("Blockalicious")
-            .onChange(of: scenePhase) { phase in
-                if phase == .active {
-                    blockedDomainsVim.updateExtensionState()
-                }
+            .toolbar { EditButton() }
+        }
+        .navigationViewStyle(.stack)
+        .onChange(of: scenePhase) { phase in
+            if phase == .active {
+                blockedDomainsVim.updateExtensionState()
             }
         }
     }
