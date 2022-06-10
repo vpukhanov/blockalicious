@@ -26,8 +26,12 @@ class BlockedDomainsVim: ObservableObject {
             }
     }
 
-    func add() -> BlockedDomain.ID {
-        let domain = BlockedDomain(name: "*example.com")
+    @discardableResult func add() -> BlockedDomain.ID {
+        add(domain: "*example.com")
+    }
+    
+    @discardableResult func add(domain: String) -> BlockedDomain.ID {
+        let domain = BlockedDomain(name: domain)
         domains.append(domain)
         return domain.id
     }

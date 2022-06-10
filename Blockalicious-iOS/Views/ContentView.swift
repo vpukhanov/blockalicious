@@ -17,11 +17,11 @@ struct ContentView: View {
             List {
                 Section {
                     HStack {
-                        TextField("Domain to block", text: $domainField)
+                        domainTextField
                         
                         Spacer()
                         
-                        Button {} label: {
+                        Button(action: add) {
                             Label("Add", systemImage: "plus")
                         }
                     }
@@ -44,6 +44,26 @@ struct ContentView: View {
             .toolbar { EditButton() }
             .navigationTitle("Blocklist")
         }
+    }
+    
+    private var domainTextField: some View {
+        if #available(iOS 15.0, *) {
+            return AnyView(
+                TextField("Domain to block", text: $domainField)
+                    .onSubmit(add)
+            )
+        } else {
+            return AnyView(
+                TextField("Domain to block", text: $domainField)
+            )
+        }
+    }
+    
+    private func add() {
+        let _ = withAnimation {
+            blockedDomainsVim.add(domain: domainField)
+        }
+        domainField = "*example.com"
     }
     
     private func delete(_ indexSet: IndexSet) {
