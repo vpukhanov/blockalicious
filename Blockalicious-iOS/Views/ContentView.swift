@@ -42,7 +42,7 @@ struct ContentView: View {
                 }
             }
             .toolbar { EditButton() }
-            .navigationTitle("Blocklist")
+            .navigationTitle("Blockalicious")
         }
     }
     
