@@ -2,8 +2,17 @@ import Foundation
 
 class BlockedDomain: Identifiable, ObservableObject, Codable {
     var id: UUID
+    
     @Published var name: String
     @Published var enabled: Bool
+    
+    // This is not a robust solution, but that's okay. I am bringing in favicons
+    // mostly for decoration, so it's okay if the user sees a generic placeholder
+    // instead from time to time.
+    var favicon: String {
+        let baseDomain = name.drop(while: { !$0.isLetter && !$0.isNumber })
+        return "https://\(baseDomain)/favicon.ico"
+    }
 
     enum CodingKeys: CodingKey {
         case id, name, enabled

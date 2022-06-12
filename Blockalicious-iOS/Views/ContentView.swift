@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
@@ -45,6 +46,15 @@ struct ContentView: View {
                 Section {
                     ForEach($blockedDomainsVim.domains) { $domain in
                         HStack {
+                            if #available(iOS 15.0, *) {
+                                CachedAsyncImage(url: URL(string: domain.favicon)) { image in
+                                    image.resizable()
+                                        .frame(width: 22, height: 22)
+                                } placeholder: {
+                                    Text("🧭")
+                                }
+                            }
+                            
                             Text($domain.name.wrappedValue)
                             
                             Spacer()

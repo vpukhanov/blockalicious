@@ -21,6 +21,8 @@
 		11BF5B312853A45B00E3490A /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
 		11BF5B322853A46C00E3490A /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
 		11BF5B332853A46D00E3490A /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
+		11BF5B3628567CA100E3490A /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 11BF5B3528567CA100E3490A /* CachedAsyncImage */; };
+		11BF5B3828567CBB00E3490A /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 11BF5B3728567CBB00E3490A /* CachedAsyncImage */; };
 		B3C5B1BA09916A76623CC7CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */; };
 		B3C5B33555D902922F4D1377 /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
 		B3C5B8CFB43218731C9A9255 /* ExtensionDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */; };
@@ -112,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BF5B3828567CBB00E3490A /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BF5B3628567CA100E3490A /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +283,9 @@
 				11BF5B23285378E100E3490A /* PBXTargetDependency */,
 			);
 			name = "Blockalicious-iOS";
+			packageProductDependencies = (
+				11BF5B3728567CBB00E3490A /* CachedAsyncImage */,
+			);
 			productName = "Blockalicious-iOS";
 			productReference = 11BF5B032853783A00E3490A /* Blockalicious-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -315,6 +322,9 @@
 				F7E3328C27AE3B2E00333EDC /* PBXTargetDependency */,
 			);
 			name = Blockalicious;
+			packageProductDependencies = (
+				11BF5B3528567CA100E3490A /* CachedAsyncImage */,
+			);
 			productName = Blockalicious;
 			productReference = F7E3325E27ADAD9600333EDC /* Blockalicious.app */;
 			productType = "com.apple.product-type.application";
@@ -369,6 +379,9 @@
 				Base,
 			);
 			mainGroup = F7E3325527ADAD9600333EDC;
+			packageReferences = (
+				11BF5B3428567CA100E3490A /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+			);
 			productRefGroup = F7E3325F27ADAD9600333EDC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -504,7 +517,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2022.2;
+				MARKETING_VERSION = 2022.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -538,7 +551,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2022.2;
+				MARKETING_VERSION = 2022.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -566,7 +579,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.2;
+				MARKETING_VERSION = 2022.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -594,7 +607,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.2;
+				MARKETING_VERSION = 2022.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -743,7 +756,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2022.2;
+				MARKETING_VERSION = 2022.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -774,7 +787,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2022.2;
+				MARKETING_VERSION = 2022.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -801,7 +814,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.2;
+				MARKETING_VERSION = 2022.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -829,7 +842,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.2;
+				MARKETING_VERSION = 2022.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -888,6 +901,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11BF5B3428567CA100E3490A /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11BF5B3528567CA100E3490A /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11BF5B3428567CA100E3490A /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+		11BF5B3728567CBB00E3490A /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11BF5B3428567CA100E3490A /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F7E3325627ADAD9600333EDC /* Project object */;
 }
