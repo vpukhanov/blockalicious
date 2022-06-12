@@ -9,6 +9,15 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Table($blockedDomainsVim.domains, selection: $selectedDomain) {
+                TableColumn("🏷️") { $item in
+                    AsyncImage(url: URL(string: item.favicon)) { image in
+                        image.resizable()
+                            .frame(width: 16, height: 16)
+                    } placeholder: {
+                        Text("🧭")
+                    }
+                }
+                .width(16)
                 TableColumn("Domain") { $item in
                     TextField("Domain Name", text: $item.name)
                         .textCase(.lowercase)
