@@ -13,12 +13,12 @@ struct ContentView: View {
                 TableColumn("🏷️") { $item in
                     CachedAsyncImage(url: URL(string: item.favicon)) { image in
                         image.resizable()
-                            .frame(width: 16, height: 16)
+                            .frame(width: 18, height: 18)
                     } placeholder: {
                         Text("🧭")
                     }
                 }
-                .width(16)
+                .width(18)
                 TableColumn("Domain") { $item in
                     TextField("Domain Name", text: $item.name)
                         .textCase(.lowercase)
