@@ -505,7 +505,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Blockalicious-iOS/Blockalicious-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -522,7 +522,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2022.4;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -540,7 +540,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Blockalicious-iOS/Blockalicious-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -557,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2022.4;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -573,7 +573,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content Blocker-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Content Blocker/Info.plist";
@@ -585,7 +585,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.4;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -601,7 +601,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content Blocker-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Content Blocker/Info.plist";
@@ -613,7 +613,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.4;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -754,7 +754,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -768,7 +768,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2022.4;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -787,7 +787,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -801,7 +801,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2022.4;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -816,7 +816,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -829,7 +829,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.4;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -845,7 +845,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -858,7 +858,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.4;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
