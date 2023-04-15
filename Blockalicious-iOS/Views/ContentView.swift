@@ -67,7 +67,17 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Blockalicious")
-            .toolbar { EditButton() }
+            .toolbar {
+                ToolbarItem {
+                    Button(action: toggleAll) {
+                        Label("Toggle All Domains", systemImage: "checklist")
+                    }
+                    .keyboardShortcut("t", modifiers: [.command, .shift])
+                }
+                ToolbarItem {
+                    EditButton()
+                }
+            }
         }
         .navigationViewStyle(.stack)
         .onChange(of: scenePhase) { phase in
@@ -102,6 +112,10 @@ struct ContentView: View {
             let domain = blockedDomainsVim.domains[index]
             blockedDomainsVim.delete(withID: domain.id)
         }
+    }
+    
+    private func toggleAll() {
+        blockedDomainsVim.toggleAll()
     }
     
     private func goToSafariSettings() {
