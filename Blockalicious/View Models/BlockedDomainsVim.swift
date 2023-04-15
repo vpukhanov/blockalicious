@@ -49,6 +49,13 @@ class BlockedDomainsVim: ObservableObject {
             save()
         }
     }
+    
+    func toggleAll() {
+        let allEnabled = domains.allSatisfy { $0.enabled }
+        objectWillChange.send()
+        domains.forEach { $0.enabled = !allEnabled }
+        save()
+    }
 
     func save() {
         guard let data = try? JSONEncoder().encode(domains) else {

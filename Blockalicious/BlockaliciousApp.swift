@@ -16,6 +16,10 @@ struct BlockaliciousApp: App {
                     NotificationCenter.default.post(name: .requestAddDomain, object: nil)
                 }
                 .keyboardShortcut("n")
+                Button("Toggle All Domains") {
+                    NotificationCenter.default.post(name: .requestToggleAllDomains, object: nil)
+                }
+                .keyboardShortcut("t", modifiers: [.command, .shift])
             }
         }
     }
