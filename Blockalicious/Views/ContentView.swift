@@ -37,6 +37,12 @@ struct ContentView: View {
                         }
                     }
                 }
+            
+            // Invisible button to toggle the activity state of the selected domain
+            // via spacebar. Couldn't find a built-in selected item action in the SwiftUI Table
+            Button("Toggle Selected Domain", action: toggleSelected)
+                .keyboardShortcut(.space, modifiers: [])
+                .hidden()
 
             if !blockedDomainsVim.contentBlockerEnabled {
                 ExtensionDisabledView()
@@ -51,6 +57,12 @@ struct ContentView: View {
     private func deleteSelected() {
         if let id = selectedDomain {
             blockedDomainsVim.delete(withID: id)
+        }
+    }
+    
+    private func toggleSelected() {
+        if let id = selectedDomain {
+            blockedDomainsVim.toggle(withID: id)
         }
     }
 }
