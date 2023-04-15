@@ -17,7 +17,19 @@ class BlockerListWriter {
     }
 
     func write(domains: [BlockedDomain]) {
-        let names = domains.filter(\.enabled).map { $0.name.lowercased() }
+        var names = domains.filter(\.enabled).map { $0.name.lowercased() }
+        
+        // Safari doesn't like the content blocker config with an empty "if-domain" list.
+        // When you pass an empty list, it uses the previously cached value instead of the new one,
+        // so if all domain blocks are disabled within the app, they are not really all disabled.
+        // Passing the empty list as the fileContents all together doesn't seem to fix the issue
+        // as well.
+        // Hence when the user doesn't block any domains, we are blocking a non existing domain
+        // so that Safari is satisfied with a config.
+        if names.isEmpty {
+            names = ["non1.existent2.domain3"]
+        }
+        
         guard
                 let data = try? JSONEncoder().encode(names),
                 let namesJson = String(data: data, encoding: .utf8) else {
