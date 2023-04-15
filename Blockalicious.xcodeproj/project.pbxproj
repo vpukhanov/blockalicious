@@ -10,7 +10,7 @@
 		11BF5B062853783A00E3490A /* Blockalicious_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */; };
 		11BF5B082853783A00E3490A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5B072853783A00E3490A /* ContentView.swift */; };
 		11BF5B0A2853783B00E3490A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BF5B092853783B00E3490A /* Assets.xcassets */; };
-		11BF5B24285378E100E3490A /* Content Blocker-iOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11BF5B24285378E100E3490A /* Content Blocker-iOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11BF5B282853791200E3490A /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */; };
 		11BF5B2B28537DCD00E3490A /* DomainsPreseed.json in Resources */ = {isa = PBXBuildFile; fileRef = F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */; };
 		11BF5B2C28537DD500E3490A /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
@@ -34,7 +34,7 @@
 		F7E3327B27ADBDCA00333EDC /* DomainsPreseed.json in Resources */ = {isa = PBXBuildFile; fileRef = F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */; };
 		F7E3328327AE3B2E00333EDC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E3328227AE3B2E00333EDC /* Cocoa.framework */; };
 		F7E3328827AE3B2E00333EDC /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */; };
-		F7E3328D27AE3B2E00333EDC /* Content Blocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F7E3328027AE3B2E00333EDC /* Content Blocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F7E3328D27AE3B2E00333EDC /* Content Blocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F7E3328027AE3B2E00333EDC /* Content Blocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,26 +55,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		11BF5B152853786500E3490A /* Embed App Extensions */ = {
+		11BF5B152853786500E3490A /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				11BF5B24285378E100E3490A /* Content Blocker-iOS.appex in Embed App Extensions */,
+				11BF5B24285378E100E3490A /* Content Blocker-iOS.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F7E3328E27AE3B2E00333EDC /* Embed App Extensions */ = {
+		F7E3328E27AE3B2E00333EDC /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F7E3328D27AE3B2E00333EDC /* Content Blocker.appex in Embed App Extensions */,
+				F7E3328D27AE3B2E00333EDC /* Content Blocker.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -275,7 +275,7 @@
 				11BF5AFF2853783A00E3490A /* Sources */,
 				11BF5B002853783A00E3490A /* Frameworks */,
 				11BF5B012853783A00E3490A /* Resources */,
-				11BF5B152853786500E3490A /* Embed App Extensions */,
+				11BF5B152853786500E3490A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -314,7 +314,7 @@
 				F7E3325A27ADAD9600333EDC /* Sources */,
 				F7E3325B27ADAD9600333EDC /* Frameworks */,
 				F7E3325C27ADAD9600333EDC /* Resources */,
-				F7E3328E27AE3B2E00333EDC /* Embed App Extensions */,
+				F7E3328E27AE3B2E00333EDC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -354,7 +354,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					11BF5B022853783A00E3490A = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -569,7 +569,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content Blocker-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Content Blocker/Info.plist";
@@ -581,7 +581,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.3;
+				MARKETING_VERSION = 2022.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -597,7 +597,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content Blocker-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Content Blocker/Info.plist";
@@ -609,7 +609,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.3;
+				MARKETING_VERSION = 2022.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -655,6 +655,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -672,6 +673,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -716,6 +718,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -727,6 +730,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -747,6 +751,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 11;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -758,6 +763,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 2022.4;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -778,6 +784,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 11;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -789,6 +796,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 2022.4;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pukhanov.Blockalicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -804,7 +812,8 @@
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -816,7 +825,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.3;
+				MARKETING_VERSION = 2022.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -832,7 +841,8 @@
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = BFJQQT3YDX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -844,7 +854,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.3;
+				MARKETING_VERSION = 2022.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pukhanov.Blockalicious.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
