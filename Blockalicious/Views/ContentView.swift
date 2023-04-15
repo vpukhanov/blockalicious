@@ -37,6 +37,8 @@ struct ContentView: View {
                         }
                     }
                 }
+                // Command sent from the global menu (File -> New Domain, or Cmd + N)
+                .onReceive(NotificationCenter.default.publisher(for: .requestAddDomain)) { _ in add() }
             
             // Invisible button to toggle the activity state of the selected domain
             // via spacebar. Couldn't find a built-in selected item action in the SwiftUI Table

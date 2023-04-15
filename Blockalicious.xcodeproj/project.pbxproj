@@ -35,6 +35,7 @@
 		F7E3328327AE3B2E00333EDC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E3328227AE3B2E00333EDC /* Cocoa.framework */; };
 		F7E3328827AE3B2E00333EDC /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */; };
 		F7E3328D27AE3B2E00333EDC /* Content Blocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F7E3328027AE3B2E00333EDC /* Content Blocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F7FC175929EB21E80055049C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC175829EB21E80055049C /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		F7E3328927AE3B2E00333EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7E3328A27AE3B2E00333EDC /* Content_Blocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Content_Blocker.entitlements; sourceTree = "<group>"; };
 		F7E3329227AE3C5300333EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F7FC175829EB21E80055049C /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				F7E3327727ADB89200333EDC /* Decoding.swift */,
+				F7FC175829EB21E80055049C /* Notification.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				F7E3327527ADB86700333EDC /* BlockedDomainsVim.swift in Sources */,
 				F7E3326227ADAD9600333EDC /* BlockaliciousApp.swift in Sources */,
 				F7E3327227ADAE7000333EDC /* BlockedDomain.swift in Sources */,
+				F7FC175929EB21E80055049C /* Notification.swift in Sources */,
 				B3C5B33555D902922F4D1377 /* BlockerListWriter.swift in Sources */,
 				B3C5B1BA09916A76623CC7CF /* ContentView.swift in Sources */,
 				B3C5B8CFB43218731C9A9255 /* ExtensionDisabledView.swift in Sources */,

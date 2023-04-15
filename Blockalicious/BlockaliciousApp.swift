@@ -10,5 +10,13 @@ struct BlockaliciousApp: App {
                 .frame(minWidth: 400, minHeight: 200) // Specify sensible minimum window size
                 .environmentObject(blockedDomainsVim)
         }
+        .commands {
+            CommandGroup(replacing: .newItem) {
+                Button("New Domain") {
+                    NotificationCenter.default.post(name: .requestAddDomain, object: nil)
+                }
+                .keyboardShortcut("n")
+            }
+        }
     }
 }
