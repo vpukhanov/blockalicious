@@ -33,7 +33,8 @@ struct ContentView: View {
                 
                 Section {
                     HStack {
-                        domainTextField
+                        TextField("Domain to block", text: $domainField)
+                            .onSubmit(add)
                         
                         Spacer()
                         
@@ -46,13 +47,11 @@ struct ContentView: View {
                 Section {
                     ForEach($blockedDomainsVim.domains) { $domain in
                         HStack {
-                            if #available(iOS 15.0, *) {
-                                CachedAsyncImage(url: URL(string: domain.favicon)) { image in
-                                    image.resizable()
-                                        .frame(width: 22, height: 22)
-                                } placeholder: {
-                                    Text("🧭")
-                                }
+                            CachedAsyncImage(url: URL(string: domain.favicon)) { image in
+                                image.resizable()
+                                    .frame(width: 22, height: 22)
+                            } placeholder: {
+                                Text("🧭")
                             }
                             
                             Text($domain.name.wrappedValue)
@@ -84,19 +83,6 @@ struct ContentView: View {
             if phase == .active {
                 blockedDomainsVim.updateExtensionState()
             }
-        }
-    }
-    
-    private var domainTextField: some View {
-        if #available(iOS 15.0, *) {
-            return AnyView(
-                TextField("Domain to block", text: $domainField)
-                    .onSubmit(add)
-            )
-        } else {
-            return AnyView(
-                TextField("Domain to block", text: $domainField)
-            )
         }
     }
     
