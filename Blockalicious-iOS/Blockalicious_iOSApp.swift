@@ -8,13 +8,10 @@
 import SwiftUI
 
 @main
-struct Blockalicious_iOSApp: App {
-    @StateObject private var blockedDomainsVim = BlockedDomainsVim()
-    
+struct Blockalicious_iOSApp: App {    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(blockedDomainsVim)
         }
     }
 }

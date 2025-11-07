@@ -11,7 +11,7 @@ import CachedAsyncImage
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
     
-    @EnvironmentObject private var blockedDomainsVim: BlockedDomainsVim
+    @StateObject private var blockedDomainsVim = BlockedDomainsVim()
     
     @State private var domainField = "*example.com"
     
@@ -54,7 +54,7 @@ struct ContentView: View {
                                 Text("🧭")
                             }
                             
-                            Text($domain.name.wrappedValue)
+                            Text(domain.name)
                             
                             Spacer()
                             
@@ -67,15 +67,12 @@ struct ContentView: View {
             }
             .navigationTitle("Blockalicious")
             .toolbar {
-                ToolbarItem {
-                    Button(action: toggleAll) {
-                        Label("Toggle All Domains", systemImage: "checklist")
-                    }
-                    .keyboardShortcut("t", modifiers: [.command, .shift])
+                Button(action: toggleAll) {
+                    Label("Toggle All Domains", systemImage: "checklist")
                 }
-                ToolbarItem {
-                    EditButton()
-                }
+                .keyboardShortcut("t", modifiers: [.command, .shift])
+
+                EditButton()
             }
         }
         .navigationViewStyle(.stack)
