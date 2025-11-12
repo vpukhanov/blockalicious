@@ -15,7 +15,8 @@ struct ContentView: View {
                         image.resizable()
                             .frame(width: 18, height: 18)
                     } placeholder: {
-                        Text("🧭")
+                        Image(systemName: "square.dashed").resizable()
+                            .frame(width: 18, height: 18)
                     }
                 }
                 .width(18)
@@ -29,23 +30,23 @@ struct ContentView: View {
                         .labelsHidden()
                 }
             }
-                .onDeleteCommand(perform: deleteSelected)
-                .toolbar {
-                    ToolbarItem {
-                        Button(action: toggleAll) {
-                            Label("Toggle All Domains", systemImage: "checklist")
-                        }
-                    }
-                    ToolbarItem(placement: .primaryAction) {
-                        Button(action: add) {
-                            Label("Add Domain", systemImage: "plus")
-                        }
+            .onDeleteCommand(perform: deleteSelected)
+            .toolbar {
+                ToolbarItem {
+                    Button(action: toggleAll) {
+                        Label("Toggle All Domains", systemImage: "checklist")
                     }
                 }
-                // File -> New Domain, or Cmd + N
-                .onReceive(NotificationCenter.default.publisher(for: .requestAddDomain)) { _ in add() }
-                // File -> Toggle All Domains, or Cmd + Shift + T
-                .onReceive(NotificationCenter.default.publisher(for: .requestToggleAllDomains)) { _ in toggleAll() }
+                ToolbarItem(placement: .primaryAction) {
+                    Button(action: add) {
+                        Label("Add Domain", systemImage: "plus")
+                    }
+                }
+            }
+            // File -> New Domain, or Cmd + N
+            .onReceive(NotificationCenter.default.publisher(for: .requestAddDomain)) { _ in add() }
+            // File -> Toggle All Domains, or Cmd + Shift + T
+            .onReceive(NotificationCenter.default.publisher(for: .requestToggleAllDomains)) { _ in toggleAll() }
             
             // Invisible button to toggle the activity state of the selected domain
             // via spacebar. Couldn't find a built-in selected item action in the SwiftUI Table

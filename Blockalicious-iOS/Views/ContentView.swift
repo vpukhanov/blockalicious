@@ -20,14 +20,15 @@ struct ContentView: View {
             List {
                 if !blockedDomainsVim.contentBlockerEnabled {
                     Section {
-                        (
-                            Text("Safari extension is currently disabled").bold() +
-                            Text("\n\nEnable the Blockalicious extension for the blocking rules to take effect.") +
-                            Text("\n\nGo to Settings > Safari > Extensions, toggle Blockalicious on")
-                        )
-                        .padding(.vertical, 6)
-                        
-                        Button("Go to Settings…", action: goToSafariSettings)
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Safari extension is currently disabled").bold()
+                            Text("Enable the Blockalicious extension for the blocking rules to take effect")
+                            Text("Go to Settings > Apps > Safari > Extensions and toggle Blockalicious on")
+                        }
+
+                        Button(action: goToSafariSettings) {
+                            Label("Go to Settings…", systemImage: "gear")
+                        }
                     }
                 }
                 
@@ -41,6 +42,7 @@ struct ContentView: View {
                         Button(action: add) {
                             Label("Add", systemImage: "plus")
                         }
+                        .buttonStyle(.bordered)
                     }
                 }
                 
@@ -51,7 +53,8 @@ struct ContentView: View {
                                 image.resizable()
                                     .frame(width: 22, height: 22)
                             } placeholder: {
-                                Text("🧭")
+                                Image(systemName: "square.dashed").resizable()
+                                    .frame(width: 22, height: 22)
                             }
                             
                             Text(domain.name)

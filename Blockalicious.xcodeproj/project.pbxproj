@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1160B8F82EC4E0BA009162D5 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1160B8F72EC4E0BA009162D5 /* AppIcon.icon */; };
+		1160B8F92EC4E0BA009162D5 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1160B8F72EC4E0BA009162D5 /* AppIcon.icon */; };
 		11BF5B062853783A00E3490A /* Blockalicious_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */; };
 		11BF5B082853783A00E3490A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5B072853783A00E3490A /* ContentView.swift */; };
 		11BF5B0A2853783B00E3490A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BF5B092853783B00E3490A /* Assets.xcassets */; };
@@ -81,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1160B8F72EC4E0BA009162D5 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		11BF5B032853783A00E3490A /* Blockalicious-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blockalicious-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockalicious_iOSApp.swift; sourceTree = "<group>"; };
 		11BF5B072853783A00E3490A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -208,6 +211,7 @@
 				F7E3327327ADB85900333EDC /* View Models */,
 				B3C5B1261B48B90677A100FF /* Views */,
 				F7E3326127ADAD9600333EDC /* BlockaliciousApp.swift */,
+				1160B8F72EC4E0BA009162D5 /* AppIcon.icon */,
 				F7E3326527ADAD9700333EDC /* Assets.xcassets */,
 				F7E3326A27ADAD9700333EDC /* Blockalicious.entitlements */,
 				F7E3329227AE3C5300333EDC /* Info.plist */,
@@ -404,6 +408,7 @@
 			files = (
 				11BF5B2B28537DCD00E3490A /* DomainsPreseed.json in Resources */,
 				11BF5B0A2853783B00E3490A /* Assets.xcassets in Resources */,
+				1160B8F82EC4E0BA009162D5 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +425,7 @@
 			files = (
 				F7E3327B27ADBDCA00333EDC /* DomainsPreseed.json in Resources */,
 				F7E3326627ADAD9700333EDC /* Assets.xcassets in Resources */,
+				1160B8F92EC4E0BA009162D5 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

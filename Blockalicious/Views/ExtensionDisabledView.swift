@@ -10,10 +10,10 @@ struct ExtensionDisabledView: View {
                 Spacer()
                 Button("Go to Safari settings…", action: goToSafariSettings)
             }
-                .padding(.horizontal)
-                .padding(.vertical, 4)
-                .background(Color(nsColor: .controlBackgroundColor))
-                .overlay(Divider(), alignment: .top)
+            .padding(.horizontal)
+            .padding(.vertical, 4)
+            .background(Color(nsColor: .controlBackgroundColor))
+            .overlay(Divider(), alignment: .top)
         }
     }
     

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 146.69 173.78">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#GradientFill_2);
+        fill-rule: evenodd;
+      }
+    </style>
+    <linearGradient id="GradientFill_2" data-name="GradientFill 2" x1="27.17" y1="43.25" x2="140.43" y2="123.55" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c5add4"/>
+      <stop offset="1" stop-color="#754293"/>
+    </linearGradient>
+  </defs>
+  <g id="_защита" data-name="защита">
+    <path class="cls-1" d="M73.35,173.78c-5.87,0-32.2-17.3-39.2-22.38C14.18,136.89,0,122.62,0,95.9v-61.43c0-8.95,3.36-13.82,10.43-15.94L71.23.36c.71-.21,1.37-.36,2.12-.36s1.41.15,2.12.36l60.79,18.17c7.07,2.11,10.43,6.99,10.43,15.94v61.43c0,26.72-14.18,41-34.15,55.5-7,5.09-33.33,22.38-39.2,22.38Z"/>
+  </g>
+</svg>

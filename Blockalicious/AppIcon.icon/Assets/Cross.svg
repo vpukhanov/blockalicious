@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 42.71 42.71">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#GradientFill_6);
+        fill-rule: evenodd;
+      }
+    </style>
+    <linearGradient id="GradientFill_6" data-name="GradientFill 6" x1="4.3" y1="4.3" x2="50.02" y2="50.02" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".38" stop-color="#f9cecd"/>
+      <stop offset=".8" stop-color="#f4a09d"/>
+      <stop offset="1" stop-color="#f28f8b"/>
+    </linearGradient>
+  </defs>
+  <g id="_крестик" data-name="крестик">
+    <path class="cls-1" d="M40.44,2.27h0c3.03,3.03,3.03,7.98,0,11.01l-8.08,8.08,8.08,8.08c3.03,3.03,3.03,7.98,0,11.01h0c-3.03,3.03-7.98,3.03-11.01,0l-8.08-8.08-8.08,8.08c-3.03,3.03-7.98,3.03-11.01,0h0c-3.03-3.03-3.03-7.98,0-11.01l8.08-8.08L2.27,13.28C-.76,10.25-.76,5.3,2.27,2.27h0c3.03-3.03,7.98-3.03,11.01,0l8.08,8.08L29.43,2.27c3.03-3.03,7.98-3.03,11.01,0Z"/>
+  </g>
+</svg>
