@@ -15,7 +15,9 @@ struct ContentView: View {
                         image.resizable()
                             .frame(width: 18, height: 18)
                     } placeholder: {
-                        Image(systemName: "square.dashed").resizable()
+                        Image(systemName: "questionmark.square.dashed")
+                            .resizable()
+                            .fontWeight(.light)
                             .frame(width: 18, height: 18)
                     }
                 }
