@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1160B8F82EC4E0BA009162D5 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1160B8F72EC4E0BA009162D5 /* AppIcon.icon */; };
 		1160B8F92EC4E0BA009162D5 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1160B8F72EC4E0BA009162D5 /* AppIcon.icon */; };
+		1196226A2EC9000D007F0454 /* ExtensionDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119622692EC9000D007F0454 /* ExtensionDisabledView.swift */; };
 		11BF5B062853783A00E3490A /* Blockalicious_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */; };
 		11BF5B082853783A00E3490A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5B072853783A00E3490A /* ContentView.swift */; };
 		11BF5B0A2853783B00E3490A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BF5B092853783B00E3490A /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		1160B8F72EC4E0BA009162D5 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		119622692EC9000D007F0454 /* ExtensionDisabledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDisabledView.swift; sourceTree = "<group>"; };
 		11BF5B032853783A00E3490A /* Blockalicious-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blockalicious-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockalicious_iOSApp.swift; sourceTree = "<group>"; };
 		11BF5B072853783A00E3490A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				11BF5B072853783A00E3490A /* ContentView.swift */,
+				119622692EC9000D007F0454 /* ExtensionDisabledView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 			files = (
 				11BF5B2E28537DE300E3490A /* Decoding.swift in Sources */,
 				11BF5B082853783A00E3490A /* ContentView.swift in Sources */,
+				1196226A2EC9000D007F0454 /* ExtensionDisabledView.swift in Sources */,
 				11BF5B2C28537DD500E3490A /* BlockerListWriter.swift in Sources */,
 				11BF5B2F28537DE800E3490A /* BlockedDomainsVim.swift in Sources */,
 				11BF5B2D28537DDF00E3490A /* BlockedDomain.swift in Sources */,

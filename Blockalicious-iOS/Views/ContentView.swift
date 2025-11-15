@@ -19,17 +19,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 if !blockedDomainsVim.contentBlockerEnabled {
-                    Section {
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("\(Image(systemName: "exclamationmark.triangle.fill")) Safari extension is currently disabled").bold()
-                            Text("Enable the Blockalicious extension for the blocking rules to take effect")
-                            Text("Go to Settings > Apps > Safari > Extensions and toggle Blockalicious on")
-                        }
-
-                        Button(action: goToSafariSettings) {
-                            Label("Go to Settings…", systemImage: "gear")
-                        }
-                    }
+                    ExtensionDisabledView()
                 }
                 
                 Section {
@@ -100,10 +90,6 @@ struct ContentView: View {
             let domain = blockedDomainsVim.domains[index]
             blockedDomainsVim.delete(withID: domain.id)
         }
-    }
-
-    private func goToSafariSettings() {
-        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
     }
 }
 
