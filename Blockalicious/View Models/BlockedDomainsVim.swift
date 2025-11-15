@@ -10,8 +10,7 @@ class BlockedDomainsVim: ObservableObject {
 
     init() {
         // Load domains from app group container or from preseed file
-        domains =
-                FileManager.default
+        domains = FileManager.default
             .decode([BlockedDomain].self, from: "Domains.json", in: BlockerListWriter.securityGroupId)
                 ?? Bundle.main.decode([BlockedDomain].self, from: "DomainsPreseed.json")
                 ?? []
@@ -48,13 +47,6 @@ class BlockedDomainsVim: ObservableObject {
             domain.enabled = !domain.enabled
             save()
         }
-    }
-    
-    func toggleAll() {
-        let allEnabled = domains.allSatisfy { $0.enabled }
-        objectWillChange.send()
-        domains.forEach { $0.enabled = !allEnabled }
-        save()
     }
 
     func save() {

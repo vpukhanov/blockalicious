@@ -9,5 +9,4 @@ import Foundation
 
 extension Notification.Name {
     static let requestAddDomain = Notification.Name("RequestAddDomain")
-    static let requestToggleAllDomains = Notification.Name("RequestToggleAllDomains")
 }

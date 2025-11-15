@@ -34,11 +34,6 @@ struct ContentView: View {
             }
             .onDeleteCommand(perform: deleteSelected)
             .toolbar {
-                ToolbarItem {
-                    Button(action: toggleAll) {
-                        Label("Toggle All Domains", systemImage: "checklist")
-                    }
-                }
                 ToolbarItem(placement: .primaryAction) {
                     Button(action: add) {
                         Label("Add Domain", systemImage: "plus")
@@ -47,8 +42,6 @@ struct ContentView: View {
             }
             // File -> New Domain, or Cmd + N
             .onReceive(NotificationCenter.default.publisher(for: .requestAddDomain)) { _ in add() }
-            // File -> Toggle All Domains, or Cmd + Shift + T
-            .onReceive(NotificationCenter.default.publisher(for: .requestToggleAllDomains)) { _ in toggleAll() }
             
             // Invisible button to toggle the activity state of the selected domain
             // via spacebar. Couldn't find a built-in selected item action in the SwiftUI Table
@@ -76,9 +69,5 @@ struct ContentView: View {
         if let id = selectedDomain {
             blockedDomainsVim.toggle(withID: id)
         }
-    }
-    
-    private func toggleAll() {
-        blockedDomainsVim.toggleAll()
     }
 }
