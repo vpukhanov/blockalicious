@@ -14,11 +14,13 @@ struct ContentView: View {
                     CachedAsyncImage(url: URL(string: item.favicon)) { image in
                         image.resizable()
                             .frame(width: 18, height: 18)
+                            .clipShape(.rect(cornerRadius: 4))
                     } placeholder: {
                         Image(systemName: "questionmark.square.dashed")
                             .resizable()
                             .fontWeight(.light)
                             .frame(width: 18, height: 18)
+                            .clipShape(.rect(cornerRadius: 4))
                     }
                     
                     TextField("Domain Name", text: $item.name)
