@@ -7,7 +7,7 @@ struct BlockaliciousApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(minWidth: 400, minHeight: 200) // Specify sensible minimum window size
+                .frame(minWidth: 400, minHeight: 300) // Specify sensible minimum window size
                 .environmentObject(blockedDomainsVim)
         }
         .commands {
