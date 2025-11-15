@@ -21,7 +21,7 @@ struct ContentView: View {
                 if !blockedDomainsVim.contentBlockerEnabled {
                     Section {
                         VStack(alignment: .leading, spacing: 12) {
-                            Text("Safari extension is currently disabled").bold()
+                            Text("\(Image(systemName: "exclamationmark.triangle.fill")) Safari extension is currently disabled").bold()
                             Text("Enable the Blockalicious extension for the blocking rules to take effect")
                             Text("Go to Settings > Apps > Safari > Extensions and toggle Blockalicious on")
                         }
@@ -29,20 +29,6 @@ struct ContentView: View {
                         Button(action: goToSafariSettings) {
                             Label("Go to Settings…", systemImage: "gear")
                         }
-                    }
-                }
-                
-                Section {
-                    HStack {
-                        TextField("Domain to block", text: $domainField)
-                            .onSubmit(add)
-                        
-                        Spacer()
-                        
-                        Button(action: add) {
-                            Label("Add", systemImage: "plus")
-                        }
-                        .buttonStyle(.bordered)
                     }
                 }
                 
@@ -72,17 +58,29 @@ struct ContentView: View {
             }
             .navigationTitle("Blockalicious")
             .toolbar {
-                Button(action: toggleAll) {
-                    Label("Toggle All Domains", systemImage: "checklist")
-                }
-                .keyboardShortcut("t", modifiers: [.command, .shift])
-
                 EditButton()
+            }
+            .safeAreaBar(edge: .bottom) {
+                HStack {
+                    TextField("Domain to block", text: $domainField)
+                        .onSubmit(add)
+                    
+                    Spacer()
+                    
+                    Button(action: add) {
+                        Label("Add", systemImage: "plus")
+                    }
+                    .buttonStyle(.bordered)
+                    .tint(.accent)
+                }
+                .padding()
+                .glassEffect()
+                .padding()
             }
         }
         .navigationViewStyle(.stack)
-        .onChange(of: scenePhase) { phase in
-            if phase == .active {
+        .onChange(of: scenePhase) {
+            if scenePhase == .active {
                 blockedDomainsVim.updateExtensionState()
             }
         }
@@ -101,12 +99,12 @@ struct ContentView: View {
             blockedDomainsVim.delete(withID: domain.id)
         }
     }
-    
-    private func toggleAll() {
-        blockedDomainsVim.toggleAll()
-    }
-    
+
     private func goToSafariSettings() {
         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
     }
+}
+
+#Preview {
+    ContentView()
 }

@@ -6,9 +6,11 @@ struct ExtensionDisabledView: View {
         VStack {
             Spacer()
             HStack {
+                Image(systemName: "exclamationmark.triangle.fill")
                 Text("Safari extension is disabled")
                 Spacer()
                 Button("Go to Safari settings…", action: goToSafariSettings)
+                    .buttonStyle(.glassProminent)
             }
             .padding(.horizontal)
             .padding(.vertical, 4)
