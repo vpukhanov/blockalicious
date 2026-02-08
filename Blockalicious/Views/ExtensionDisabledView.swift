@@ -12,6 +12,7 @@ struct ExtensionDisabledView: View {
                 Spacer()
                 Button("Go to Safari settings…", action: goToSafariSettings)
                     .buttonStyle(.glassProminent)
+                    .buttonBorderShape(.capsule)
             }
             .padding(.horizontal)
             .padding(.vertical, 4)
