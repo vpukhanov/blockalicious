@@ -1,5 +1,6 @@
 import SwiftUI
 import CachedAsyncImage
+import BlockaliciousKit
 
 struct ContentView: View {
     @EnvironmentObject private var blockedDomainsVim: BlockedDomainsVim

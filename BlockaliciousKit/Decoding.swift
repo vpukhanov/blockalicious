@@ -1,6 +1,6 @@
 import Foundation
 
-extension Bundle {
+public extension Bundle {
     func decode<T: Decodable>(_ type: T.Type, from file: String,
                               dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
                               keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T? {
@@ -12,7 +12,7 @@ extension Bundle {
     }
 }
 
-extension FileManager {
+public extension FileManager {
     func decode<T: Decodable>(_ type: T.Type, from file: String, in appGroup: String,
                               dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
                               keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T? {

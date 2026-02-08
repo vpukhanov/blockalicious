@@ -2,13 +2,13 @@ import Foundation
 import Combine
 import SafariServices
 
-class BlockedDomainsVim: ObservableObject {
-    @Published var domains: [BlockedDomain]
-    @Published var contentBlockerEnabled: Bool
+public class BlockedDomainsVim: ObservableObject {
+    @Published public var domains: [BlockedDomain]
+    @Published public var contentBlockerEnabled: Bool
 
     private var cancellable: AnyCancellable?
 
-    init() {
+    public init() {
         // Load domains from app group container or from preseed file
         domains = FileManager.default
             .decode([BlockedDomain].self, from: "Domains.json", in: BlockerListWriter.securityGroupId)
@@ -25,23 +25,23 @@ class BlockedDomainsVim: ObservableObject {
             }
     }
 
-    @discardableResult func add() -> BlockedDomain.ID {
+    @discardableResult public func add() -> BlockedDomain.ID {
         add(domain: "*example.com")
     }
     
-    @discardableResult func add(domain: String) -> BlockedDomain.ID {
+    @discardableResult public func add(domain: String) -> BlockedDomain.ID {
         let domain = BlockedDomain(name: domain)
         domains.append(domain)
         return domain.id
     }
 
-    func delete(withID id: BlockedDomain.ID) {
+    public func delete(withID id: BlockedDomain.ID) {
         domains = domains.filter {
             $0.id != id
         }
     }
     
-    func toggle(withID id: BlockedDomain.ID) {
+    public func toggle(withID id: BlockedDomain.ID) {
         if let domain = domains.first(where: { $0.id == id }) {
             objectWillChange.send()
             domain.enabled = !domain.enabled
@@ -49,7 +49,7 @@ class BlockedDomainsVim: ObservableObject {
         }
     }
 
-    func save() {
+    public func save() {
         guard let data = try? JSONEncoder().encode(domains) else {
             fatalError("Could not encode blocked domains.")
         }
@@ -64,7 +64,7 @@ class BlockedDomainsVim: ObservableObject {
         updateExtensionState()
     }
     
-    func updateExtensionState() {
+    public func updateExtensionState() {
         SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: BlockerListWriter.contentBlockerBundleId) { state, _ in
             if let state = state {
                 DispatchQueue.main.async {

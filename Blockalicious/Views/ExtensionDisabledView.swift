@@ -1,5 +1,6 @@
 import SwiftUI
 import SafariServices
+import BlockaliciousKit
 
 struct ExtensionDisabledView: View {
     var body: some View {

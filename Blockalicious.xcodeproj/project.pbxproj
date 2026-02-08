@@ -14,6 +14,8 @@
 		11BF5B24285378E100E3490A /* Content Blocker-iOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11BF5B3628567CA100E3490A /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 11BF5B3528567CA100E3490A /* CachedAsyncImage */; };
 		11BF5B3828567CBB00E3490A /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 11BF5B3728567CBB00E3490A /* CachedAsyncImage */; };
+		1FF168B268844C858261E44A /* BlockaliciousKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117D3F872F387DE20039C67B /* BlockaliciousKit.framework */; };
+		4DE1152AE3E743238E2175F9 /* BlockaliciousKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117D3F872F387DE20039C67B /* BlockaliciousKit.framework */; };
 		F7E3328327AE3B2E00333EDC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E3328227AE3B2E00333EDC /* Cocoa.framework */; };
 		F7E3328D27AE3B2E00333EDC /* Content Blocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F7E3328027AE3B2E00333EDC /* Content Blocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -39,6 +41,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 11BF5B1A285378E100E3490A;
 			remoteInfo = "Content Blocker-iOS";
+		};
+		99A6C81C889B428F8607505A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7E3325627ADAD9600333EDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 117D3F862F387DE20039C67B;
+			remoteInfo = BlockaliciousKit;
+		};
+		EF8190B5E67446F4BBA91C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7E3325627ADAD9600333EDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 117D3F862F387DE20039C67B;
+			remoteInfo = BlockaliciousKit;
 		};
 		F7E3328B27AE3B2E00333EDC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -98,6 +114,7 @@
 
 /* Begin PBXFileReference section */
 		117D3F872F387DE20039C67B /* BlockaliciousKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlockaliciousKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		117D40FE2F3885540039C67B /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		11BF5B032853783A00E3490A /* Blockalicious-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blockalicious-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Content Blocker-iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E0495B27B81DBA00EC9ABF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -119,29 +136,9 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				AppIcon.icon,
-				Assets/BlockerListWriter.swift,
 				Assets/DomainsPreseed.json,
-				Extensions/Decoding.swift,
-				Models/BlockedDomain.swift,
-				"View Models/BlockedDomainsVim.swift",
 			);
 			target = 11BF5B022853783A00E3490A /* Blockalicious-iOS */;
-		};
-		117D3F692F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Assets/BlockerListWriter.swift,
-				Models/BlockedDomain.swift,
-			);
-			target = F7E3327F27AE3B2E00333EDC /* Content Blocker */;
-		};
-		117D3F6A2F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Assets/BlockerListWriter.swift,
-				Models/BlockedDomain.swift,
-			);
-			target = 11BF5B1A285378E100E3490A /* Content Blocker-iOS */;
 		};
 		117D3F782F387D680039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -167,7 +164,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		117D3F502F387D630039C67B /* Blockalicious */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (117D3F672F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 117D3F682F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 117D3F692F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 117D3F6A2F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Blockalicious; sourceTree = "<group>"; };
+		117D3F502F387D630039C67B /* Blockalicious */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (117D3F672F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 117D3F682F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Blockalicious; sourceTree = "<group>"; };
 		117D3F722F387D680039C67B /* Blockalicious-iOS */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (117D3F782F387D680039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Blockalicious-iOS"; sourceTree = "<group>"; };
 		117D3F7D2F387D6D0039C67B /* Content Blocker */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (117D3F802F387D6D0039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 117D3F812F387D6D0039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Content Blocker"; sourceTree = "<group>"; };
 		117D3F882F387DE20039C67B /* BlockaliciousKit */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BlockaliciousKit; sourceTree = "<group>"; };
@@ -194,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE1152AE3E743238E2175F9 /* BlockaliciousKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7E3328327AE3B2E00333EDC /* Cocoa.framework in Frameworks */,
+				1FF168B268844C858261E44A /* BlockaliciousKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +219,7 @@
 		F7E3325527ADAD9600333EDC = {
 			isa = PBXGroup;
 			children = (
+				117D40FE2F3885540039C67B /* CLAUDE.md */,
 				F7E0495B27B81DBA00EC9ABF /* README.md */,
 				F7E0495C27B81F1F00EC9ABF /* LICENSE.md */,
 				117D3F502F387D630039C67B /* Blockalicious */,
@@ -325,6 +325,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4F74AC4BE5FC47A9994D73FF /* PBXTargetDependency */,
 			);
 			name = "Content Blocker-iOS";
 			productName = "Content Blocker-iOS";
@@ -369,6 +370,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				41A75893A5354CD0A1D329B8 /* PBXTargetDependency */,
 			);
 			name = "Content Blocker";
 			productName = "Content Blocker";
@@ -383,7 +385,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 2610;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					117D3F862F387DE20039C67B = {
 						CreatedOnToolsVersion = 26.2;
@@ -519,6 +521,16 @@
 			target = 11BF5B1A285378E100E3490A /* Content Blocker-iOS */;
 			targetProxy = 11BF5B22285378E100E3490A /* PBXContainerItemProxy */;
 		};
+		41A75893A5354CD0A1D329B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 117D3F862F387DE20039C67B /* BlockaliciousKit */;
+			targetProxy = 99A6C81C889B428F8607505A /* PBXContainerItemProxy */;
+		};
+		4F74AC4BE5FC47A9994D73FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 117D3F862F387DE20039C67B /* BlockaliciousKit */;
+			targetProxy = EF8190B5E67446F4BBA91C55 /* PBXContainerItemProxy */;
+		};
 		F7E3328C27AE3B2E00333EDC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F7E3327F27AE3B2E00333EDC /* Content Blocker */;
@@ -533,7 +545,7 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -544,7 +556,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
@@ -554,7 +566,7 @@
 					"@loader_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -574,7 +586,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				XROS_DEPLOYMENT_TARGET = 26.2;
+				XROS_DEPLOYMENT_TARGET = 26.0;
 			};
 			name = Debug;
 		};
@@ -584,7 +596,7 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -595,7 +607,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
@@ -605,7 +617,7 @@
 					"@loader_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -624,7 +636,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				XROS_DEPLOYMENT_TARGET = 26.2;
+				XROS_DEPLOYMENT_TARGET = 26.0;
 			};
 			name = Release;
 		};

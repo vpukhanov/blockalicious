@@ -1,4 +1,5 @@
 import Foundation
+import BlockaliciousKit
 
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {

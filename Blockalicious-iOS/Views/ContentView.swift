@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CachedAsyncImage
+import BlockaliciousKit
 
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase

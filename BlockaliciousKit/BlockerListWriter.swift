@@ -1,22 +1,22 @@
 import Foundation
 import SafariServices
 
-class BlockerListWriter {
+public class BlockerListWriter {
     #if os(iOS)
-    static let contentBlockerBundleId = "ru.pukhanov.Blockalicious.Content-Blocker-iOS"
-    static let securityGroupId = "group.BFJQQT3YDX.Blockalicious"
+    public static let contentBlockerBundleId = "ru.pukhanov.Blockalicious.Content-Blocker-iOS"
+    public static let securityGroupId = "group.BFJQQT3YDX.Blockalicious"
     #endif
     #if os(macOS)
-    static let contentBlockerBundleId = "ru.pukhanov.Blockalicious.Content-Blocker"
-    static let securityGroupId = "BFJQQT3YDX.Blockalicious"
+    public static let contentBlockerBundleId = "ru.pukhanov.Blockalicious.Content-Blocker"
+    public static let securityGroupId = "BFJQQT3YDX.Blockalicious"
     #endif
-    
-    static let shared = BlockerListWriter()
+
+    public static let shared = BlockerListWriter()
 
     private init() {
     }
 
-    func write(domains: [BlockedDomain]) {
+    public func write(domains: [BlockedDomain]) {
         var names = domains.filter(\.enabled).map { $0.name.lowercased() }
         
         // Safari doesn't like the content blocker config with an empty "if-domain" list.
