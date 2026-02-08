@@ -136,7 +136,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				AppIcon.icon,
-				Assets/DomainsPreseed.json,
 			);
 			target = 11BF5B022853783A00E3490A /* Blockalicious-iOS */;
 		};

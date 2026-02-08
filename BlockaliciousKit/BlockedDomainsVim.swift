@@ -12,7 +12,7 @@ public class BlockedDomainsVim: ObservableObject {
         // Load domains from app group container or from preseed file
         domains = FileManager.default
             .decode([BlockedDomain].self, from: "Domains.json", in: BlockerListWriter.securityGroupId)
-                ?? Bundle.main.decode([BlockedDomain].self, from: "DomainsPreseed.json")
+                ?? Bundle(for: BlockedDomainsVim.self).decode([BlockedDomain].self, from: "DomainsPreseed.json")
                 ?? []
 
         contentBlockerEnabled = true

@@ -35,7 +35,7 @@ These differ by platform and are defined in `BlockerListWriter`:
 
 ### Xcode Project Structure
 
-The project uses **PBXFileSystemSynchronizedRootGroup** — files are automatically compiled into the target that owns their directory. Cross-target file sharing uses `membershipExceptions` in the pbxproj (e.g., `DomainsPreseed.json` from `Blockalicious/Assets/` is shared to the iOS target). Moving files between directories changes their target membership automatically.
+The project uses **PBXFileSystemSynchronizedRootGroup** — files are automatically compiled into the target that owns their directory. Moving files between directories changes their target membership automatically.
 
 ### Key Conventions
 
@@ -43,4 +43,4 @@ The project uses **PBXFileSystemSynchronizedRootGroup** — files are automatica
 - All public API in `BlockaliciousKit` must have explicit `public` access modifiers
 - `BlockaliciousKit` has `BUILD_LIBRARY_FOR_DISTRIBUTION = YES` — if `@Published` properties cause build issues, this can be set to `NO`
 - The Content Blocker extensions link against `BlockaliciousKit` but do NOT embed it — the host app embeds the framework
-- `DomainsPreseed.json` must stay in the app bundles (not the framework) because it's loaded via `Bundle.main`
+- `DomainsPreseed.json` is bundled in the `BlockaliciousKit` framework and loaded via `Bundle(for: BlockedDomainsVim.self)`
