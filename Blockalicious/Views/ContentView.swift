@@ -10,29 +10,9 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            List($viewModel.domains, selection: $selectedIDs) { $item in
-                HStack {
-                    CachedAsyncImage(url: URL(string: item.favicon)) { image in
-                        image.resizable()
-                            .frame(width: 18, height: 18)
-                            .clipShape(.rect(cornerRadius: 4))
-                    } placeholder: {
-                        Image(systemName: "questionmark.square.dashed")
-                            .resizable()
-                            .fontWeight(.light)
-                            .frame(width: 18, height: 18)
-                            .clipShape(.rect(cornerRadius: 4))
-                    }
-                    
-                    TextField("Domain Name", text: $item.name)
-                        .textCase(.lowercase)
-                        .focused($focusedDomain, equals: $item.id)
-                    
-                    Spacer()
-                    
-                    Toggle("Active", isOn: $item.enabled)
-                        .labelsHidden()
-                        .toggleStyle(.switch)
+            List(selection: $selectedIDs) {
+                ForEach($viewModel.domains) { $item in
+                    DomainRow(domain: $item, focusedDomain: $focusedDomain)
                 }
             }
             .listStyle(.inset(alternatesRowBackgrounds: true))
