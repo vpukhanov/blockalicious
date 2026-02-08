@@ -6,19 +6,21 @@ public struct BlockedDomain: Identifiable, Codable, Sendable, Hashable {
     public let id: UUID
     public var name: String
     public var enabled: Bool
+    public var faviconURL: String?  // Cached favicon URL discovered via FaviconFinder
 
-    // This is not a robust solution, but that's okay. I am bringing in favicons
-    // mostly for decoration, so it's okay if the user sees a generic placeholder
-    // instead from time to time.
     public var favicon: String {
-        let baseDomain = name.drop(while: { !$0.isLetter && !$0.isNumber })
-        return "https://\(baseDomain)/favicon.ico"
+        faviconURL ?? "https://\(basename)/favicon.ico"
+    }
+    
+    public var basename: String {
+        String(name.drop(while: { !$0.isLetter && !$0.isNumber }))
     }
 
-    public init(id: UUID = UUID(), name: String, enabled: Bool = true) {
+    public init(id: UUID = UUID(), name: String, enabled: Bool = true, faviconURL: String? = nil) {
         self.id = id
         self.name = name
         self.enabled = enabled
+        self.faviconURL = faviconURL
     }
 }
 

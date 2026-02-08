@@ -11,6 +11,7 @@ public final class BlockedDomainsVim: ObservableObject {
 
     private var cancellable: AnyCancellable?
     private let storage = DomainStorage()
+    private let faviconService = FaviconService()
 
     public init() {
         // Load domains from app group container or from preseed file
@@ -27,6 +28,9 @@ public final class BlockedDomainsVim: ObservableObject {
 
         // Load initial extension state
         Task { await updateExtensionState() }
+
+        // Start discovering missing favicons in background
+        discoverMissingFavicons()
     }
 
     @discardableResult
@@ -36,9 +40,19 @@ public final class BlockedDomainsVim: ObservableObject {
 
     @discardableResult
     public func add(domain: String) -> BlockedDomain.ID {
-        let domain = BlockedDomain(name: domain)
-        domains.append(domain)
-        return domain.id
+        let blocked = BlockedDomain(name: domain)
+        domains.append(blocked)
+
+        // Discover favicon in background
+        Task {
+            if let faviconURL = await faviconService.discoverFaviconURL(for: blocked.basename) {
+                if let index = domains.firstIndex(where: { $0.id == blocked.id }) {
+                    domains[index].faviconURL = faviconURL
+                }
+            }
+        }
+
+        return blocked.id
     }
 
     public func delete(withID id: BlockedDomain.ID) {
@@ -62,6 +76,22 @@ public final class BlockedDomainsVim: ObservableObject {
     public func updateExtensionState() async {
         let state = try? await SFContentBlockerManager.stateOfContentBlocker(withIdentifier: BlockerListConstants.contentBlockerBundleId)
         contentBlockerEnabled = state?.isEnabled ?? false
+    }
+
+    /// Discovers and caches favicon URLs for all domains that don't have one
+    /// Runs in background without blocking UI
+    public func discoverMissingFavicons() {
+        Task {
+            for i in domains.indices where domains[i].faviconURL == nil {
+                // Discover favicon URL in background
+                if let faviconURL = await faviconService.discoverFaviconURL(for: domains[i].basename) {
+                    domains[i].faviconURL = faviconURL
+                }
+
+                // Small delay between requests to avoid overwhelming the network
+                try? await Task.sleep(for: .milliseconds(100))
+            }
+        }
     }
 }
 
