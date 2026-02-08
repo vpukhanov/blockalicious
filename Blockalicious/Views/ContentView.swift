@@ -5,14 +5,14 @@ import BlockaliciousKit
 struct ContentView: View {
     @EnvironmentObject private var viewModel: BLViewModel
 
-    @State private var selectedIDs = Set<BLDomain.ID>()
-    @FocusState private var focusedDomain: BLDomain.ID?
+    @State private var selectedIDs = Set<UUID>()
+    @FocusState private var focusedID: UUID?
 
     var body: some View {
         ZStack {
             List(selection: $selectedIDs) {
                 ForEach(viewModel.ungroupedDomains) { item in
-                    DomainRow(domain: viewModel.binding(for: item.id), focusedDomain: $focusedDomain)
+                    DomainRow(domain: viewModel.binding(for: item.id), focusedDomain: $focusedID)
                 }
             }
             .listStyle(.inset(alternatesRowBackgrounds: true))
@@ -46,10 +46,17 @@ struct ContentView: View {
     }
 
     private func newDomain() {
-        focusedDomain = viewModel.add()
+        focusedID = viewModel.add()
     }
     
-    private func newGroup() {}
+    private func newGroup() {
+        let domainIDs = selectedIDs.filter { id in
+            viewModel.domains.contains(where: { $0.id == id })
+        }
+        if !domainIDs.isEmpty {
+            viewModel.addGroup(domainIDs: domainIDs)
+        }
+    }
 
     private func deleteSelected() {
         selectedIDs.forEach(viewModel.delete(withID:))

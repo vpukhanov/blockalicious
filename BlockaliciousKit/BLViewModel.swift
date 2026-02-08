@@ -159,9 +159,14 @@ public final class BLViewModel: ObservableObject {
     // MARK: - Group operations
 
     @discardableResult
-    public func addGroup(name: String = "New Group") -> BLDomainGroup.ID {
+    public func addGroup(domainIDs: Set<UUID>, name: String = "New Group") -> BLDomainGroup.ID {
         let group = BLDomainGroup(name: name)
         groups.append(group)
+        
+        for id in domainIDs {
+            addDomain(id, toGroup: group.id)
+        }
+        
         return group.id
     }
 
