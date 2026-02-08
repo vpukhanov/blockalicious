@@ -3,42 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1160B8F82EC4E0BA009162D5 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1160B8F72EC4E0BA009162D5 /* AppIcon.icon */; };
-		1160B8F92EC4E0BA009162D5 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1160B8F72EC4E0BA009162D5 /* AppIcon.icon */; };
-		1196226A2EC9000D007F0454 /* ExtensionDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119622692EC9000D007F0454 /* ExtensionDisabledView.swift */; };
-		11BF5B062853783A00E3490A /* Blockalicious_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */; };
-		11BF5B082853783A00E3490A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5B072853783A00E3490A /* ContentView.swift */; };
-		11BF5B0A2853783B00E3490A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BF5B092853783B00E3490A /* Assets.xcassets */; };
 		11BF5B24285378E100E3490A /* Content Blocker-iOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		11BF5B282853791200E3490A /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */; };
-		11BF5B2B28537DCD00E3490A /* DomainsPreseed.json in Resources */ = {isa = PBXBuildFile; fileRef = F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */; };
-		11BF5B2C28537DD500E3490A /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
-		11BF5B2D28537DDF00E3490A /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
-		11BF5B2E28537DE300E3490A /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327727ADB89200333EDC /* Decoding.swift */; };
-		11BF5B2F28537DE800E3490A /* BlockedDomainsVim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327427ADB86700333EDC /* BlockedDomainsVim.swift */; };
-		11BF5B302853A45B00E3490A /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
-		11BF5B312853A45B00E3490A /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
-		11BF5B322853A46C00E3490A /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
-		11BF5B332853A46D00E3490A /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
 		11BF5B3628567CA100E3490A /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 11BF5B3528567CA100E3490A /* CachedAsyncImage */; };
 		11BF5B3828567CBB00E3490A /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 11BF5B3728567CBB00E3490A /* CachedAsyncImage */; };
-		B3C5B1BA09916A76623CC7CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */; };
-		B3C5B33555D902922F4D1377 /* BlockerListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */; };
-		B3C5B8CFB43218731C9A9255 /* ExtensionDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */; };
-		F7E3326227ADAD9600333EDC /* BlockaliciousApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3326127ADAD9600333EDC /* BlockaliciousApp.swift */; };
-		F7E3326627ADAD9700333EDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7E3326527ADAD9700333EDC /* Assets.xcassets */; };
-		F7E3327227ADAE7000333EDC /* BlockedDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327127ADAE7000333EDC /* BlockedDomain.swift */; };
-		F7E3327527ADB86700333EDC /* BlockedDomainsVim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327427ADB86700333EDC /* BlockedDomainsVim.swift */; };
-		F7E3327827ADB89200333EDC /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3327727ADB89200333EDC /* Decoding.swift */; };
-		F7E3327B27ADBDCA00333EDC /* DomainsPreseed.json in Resources */ = {isa = PBXBuildFile; fileRef = F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */; };
 		F7E3328327AE3B2E00333EDC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E3328227AE3B2E00333EDC /* Cocoa.framework */; };
-		F7E3328827AE3B2E00333EDC /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */; };
 		F7E3328D27AE3B2E00333EDC /* Content Blocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F7E3328027AE3B2E00333EDC /* Content Blocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F7FC175929EB21E80055049C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC175829EB21E80055049C /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,37 +57,79 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1160B8F72EC4E0BA009162D5 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
-		119622692EC9000D007F0454 /* ExtensionDisabledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDisabledView.swift; sourceTree = "<group>"; };
 		11BF5B032853783A00E3490A /* Blockalicious-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blockalicious-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockalicious_iOSApp.swift; sourceTree = "<group>"; };
-		11BF5B072853783A00E3490A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		11BF5B092853783B00E3490A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		11BF5B112853785D00E3490A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		11BF5B162853787500E3490A /* Blockalicious-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Blockalicious-iOS.entitlements"; sourceTree = "<group>"; };
 		11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Content Blocker-iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		11BF5B292853792500E3490A /* Content Blocker-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Content Blocker-iOS.entitlements"; sourceTree = "<group>"; };
-		B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockerListWriter.swift; sourceTree = "<group>"; };
-		B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDisabledView.swift; sourceTree = "<group>"; };
-		B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F7E0495B27B81DBA00EC9ABF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F7E0495C27B81F1F00EC9ABF /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		F7E3325E27ADAD9600333EDC /* Blockalicious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockalicious.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7E3326127ADAD9600333EDC /* BlockaliciousApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockaliciousApp.swift; sourceTree = "<group>"; };
-		F7E3326527ADAD9700333EDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F7E3326A27ADAD9700333EDC /* Blockalicious.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blockalicious.entitlements; sourceTree = "<group>"; };
-		F7E3327127ADAE7000333EDC /* BlockedDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedDomain.swift; sourceTree = "<group>"; };
-		F7E3327427ADB86700333EDC /* BlockedDomainsVim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedDomainsVim.swift; sourceTree = "<group>"; };
-		F7E3327727ADB89200333EDC /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
-		F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DomainsPreseed.json; sourceTree = "<group>"; };
 		F7E3328027AE3B2E00333EDC /* Content Blocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Content Blocker.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E3328227AE3B2E00333EDC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
-		F7E3328927AE3B2E00333EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7E3328A27AE3B2E00333EDC /* Content_Blocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Content_Blocker.entitlements; sourceTree = "<group>"; };
-		F7E3329227AE3C5300333EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		F7FC175829EB21E80055049C /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		117D3F672F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F7E3325D27ADAD9600333EDC /* Blockalicious */;
+		};
+		117D3F682F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIcon.icon,
+				Assets/BlockerListWriter.swift,
+				Assets/DomainsPreseed.json,
+				Extensions/Decoding.swift,
+				Models/BlockedDomain.swift,
+				"View Models/BlockedDomainsVim.swift",
+			);
+			target = 11BF5B022853783A00E3490A /* Blockalicious-iOS */;
+		};
+		117D3F692F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets/BlockerListWriter.swift,
+				Models/BlockedDomain.swift,
+			);
+			target = F7E3327F27AE3B2E00333EDC /* Content Blocker */;
+		};
+		117D3F6A2F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets/BlockerListWriter.swift,
+				Models/BlockedDomain.swift,
+			);
+			target = 11BF5B1A285378E100E3490A /* Content Blocker-iOS */;
+		};
+		117D3F782F387D680039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 11BF5B022853783A00E3490A /* Blockalicious-iOS */;
+		};
+		117D3F802F387D6D0039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ContentBlockerRequestHandler.swift,
+			);
+			target = F7E3327F27AE3B2E00333EDC /* Content Blocker */;
+		};
+		117D3F812F387D6D0039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ContentBlockerRequestHandler.swift,
+			);
+			target = 11BF5B1A285378E100E3490A /* Content Blocker-iOS */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		117D3F502F387D630039C67B /* Blockalicious */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (117D3F672F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 117D3F682F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 117D3F692F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 117D3F6A2F387D630039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Blockalicious; sourceTree = "<group>"; };
+		117D3F722F387D680039C67B /* Blockalicious-iOS */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (117D3F782F387D680039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Blockalicious-iOS"; sourceTree = "<group>"; };
+		117D3F7D2F387D6D0039C67B /* Content Blocker */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (117D3F802F387D6D0039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 117D3F812F387D6D0039C67B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Content Blocker"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		11BF5B002853783A00E3490A /* Frameworks */ = {
@@ -151,44 +166,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11BF5B042853783A00E3490A /* Blockalicious-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				11BF5B2A28537B7200E3490A /* Views */,
-				11BF5B162853787500E3490A /* Blockalicious-iOS.entitlements */,
-				11BF5B112853785D00E3490A /* Info.plist */,
-				11BF5B052853783A00E3490A /* Blockalicious_iOSApp.swift */,
-				11BF5B092853783B00E3490A /* Assets.xcassets */,
-			);
-			path = "Blockalicious-iOS";
-			sourceTree = "<group>";
-		};
-		11BF5B2A28537B7200E3490A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				11BF5B072853783A00E3490A /* ContentView.swift */,
-				119622692EC9000D007F0454 /* ExtensionDisabledView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B3C5B1261B48B90677A100FF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B3C5BC5442FC3B7CD50F4C9D /* ContentView.swift */,
-				B3C5B8247F2D2E452CD9DDB4 /* ExtensionDisabledView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		F7E3325527ADAD9600333EDC = {
 			isa = PBXGroup;
 			children = (
 				F7E0495B27B81DBA00EC9ABF /* README.md */,
 				F7E0495C27B81F1F00EC9ABF /* LICENSE.md */,
-				F7E3326027ADAD9600333EDC /* Blockalicious */,
-				11BF5B042853783A00E3490A /* Blockalicious-iOS */,
-				F7E3328427AE3B2E00333EDC /* Content Blocker */,
+				117D3F502F387D630039C67B /* Blockalicious */,
+				117D3F722F387D680039C67B /* Blockalicious-iOS */,
+				117D3F7D2F387D6D0039C67B /* Content Blocker */,
 				F7E3328127AE3B2E00333EDC /* Frameworks */,
 				F7E3325F27ADAD9600333EDC /* Products */,
 			);
@@ -205,74 +190,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F7E3326027ADAD9600333EDC /* Blockalicious */ = {
-			isa = PBXGroup;
-			children = (
-				F7E3327927ADBDA800333EDC /* Assets */,
-				F7E3327627ADB88400333EDC /* Extensions */,
-				F7E3327027ADAE6000333EDC /* Models */,
-				F7E3327327ADB85900333EDC /* View Models */,
-				B3C5B1261B48B90677A100FF /* Views */,
-				F7E3326127ADAD9600333EDC /* BlockaliciousApp.swift */,
-				1160B8F72EC4E0BA009162D5 /* AppIcon.icon */,
-				F7E3326527ADAD9700333EDC /* Assets.xcassets */,
-				F7E3326A27ADAD9700333EDC /* Blockalicious.entitlements */,
-				F7E3329227AE3C5300333EDC /* Info.plist */,
-			);
-			path = Blockalicious;
-			sourceTree = "<group>";
-		};
-		F7E3327027ADAE6000333EDC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F7E3327127ADAE7000333EDC /* BlockedDomain.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		F7E3327327ADB85900333EDC /* View Models */ = {
-			isa = PBXGroup;
-			children = (
-				F7E3327427ADB86700333EDC /* BlockedDomainsVim.swift */,
-			);
-			path = "View Models";
-			sourceTree = "<group>";
-		};
-		F7E3327627ADB88400333EDC /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				F7E3327727ADB89200333EDC /* Decoding.swift */,
-				F7FC175829EB21E80055049C /* Notification.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		F7E3327927ADBDA800333EDC /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				F7E3327A27ADBDCA00333EDC /* DomainsPreseed.json */,
-				B3C5B453B95250DC7DE8B4D5 /* BlockerListWriter.swift */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		F7E3328127AE3B2E00333EDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				F7E3328227AE3B2E00333EDC /* Cocoa.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F7E3328427AE3B2E00333EDC /* Content Blocker */ = {
-			isa = PBXGroup;
-			children = (
-				F7E3328727AE3B2E00333EDC /* ContentBlockerRequestHandler.swift */,
-				F7E3328927AE3B2E00333EDC /* Info.plist */,
-				F7E3328A27AE3B2E00333EDC /* Content_Blocker.entitlements */,
-				11BF5B292853792500E3490A /* Content Blocker-iOS.entitlements */,
-			);
-			path = "Content Blocker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +214,9 @@
 			);
 			dependencies = (
 				11BF5B23285378E100E3490A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				117D3F722F387D680039C67B /* Blockalicious-iOS */,
 			);
 			name = "Blockalicious-iOS";
 			packageProductDependencies = (
@@ -330,6 +256,9 @@
 			);
 			dependencies = (
 				F7E3328C27AE3B2E00333EDC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				117D3F502F387D630039C67B /* Blockalicious */,
 			);
 			name = Blockalicious;
 			packageProductDependencies = (
@@ -409,9 +338,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11BF5B2B28537DCD00E3490A /* DomainsPreseed.json in Resources */,
-				11BF5B0A2853783B00E3490A /* Assets.xcassets in Resources */,
-				1160B8F82EC4E0BA009162D5 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,9 +352,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7E3327B27ADBDCA00333EDC /* DomainsPreseed.json in Resources */,
-				F7E3326627ADAD9700333EDC /* Assets.xcassets in Resources */,
-				1160B8F92EC4E0BA009162D5 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,13 +369,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11BF5B2E28537DE300E3490A /* Decoding.swift in Sources */,
-				11BF5B082853783A00E3490A /* ContentView.swift in Sources */,
-				1196226A2EC9000D007F0454 /* ExtensionDisabledView.swift in Sources */,
-				11BF5B2C28537DD500E3490A /* BlockerListWriter.swift in Sources */,
-				11BF5B2F28537DE800E3490A /* BlockedDomainsVim.swift in Sources */,
-				11BF5B2D28537DDF00E3490A /* BlockedDomain.swift in Sources */,
-				11BF5B062853783A00E3490A /* Blockalicious_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,9 +376,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11BF5B282853791200E3490A /* ContentBlockerRequestHandler.swift in Sources */,
-				11BF5B312853A45B00E3490A /* BlockerListWriter.swift in Sources */,
-				11BF5B332853A46D00E3490A /* BlockedDomain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,14 +383,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7E3327827ADB89200333EDC /* Decoding.swift in Sources */,
-				F7E3327527ADB86700333EDC /* BlockedDomainsVim.swift in Sources */,
-				F7E3326227ADAD9600333EDC /* BlockaliciousApp.swift in Sources */,
-				F7E3327227ADAE7000333EDC /* BlockedDomain.swift in Sources */,
-				F7FC175929EB21E80055049C /* Notification.swift in Sources */,
-				B3C5B33555D902922F4D1377 /* BlockerListWriter.swift in Sources */,
-				B3C5B1BA09916A76623CC7CF /* ContentView.swift in Sources */,
-				B3C5B8CFB43218731C9A9255 /* ExtensionDisabledView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,9 +390,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7E3328827AE3B2E00333EDC /* ContentBlockerRequestHandler.swift in Sources */,
-				11BF5B302853A45B00E3490A /* BlockerListWriter.swift in Sources */,
-				11BF5B322853A46C00E3490A /* BlockedDomain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
