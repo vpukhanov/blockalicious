@@ -124,14 +124,7 @@ public final class BLViewModel: ObservableObject {
 
     // MARK: - Binding helpers for filtered views
 
-    /// Creates a binding to a domain by its ID
-    ///
-    /// Use this to get bindings for domains in filtered lists (groups, ungrouped domains)
-    /// while maintaining the flat domains array as the source of truth.
-    ///
-    /// - Parameter domainID: The unique identifier of the domain
-    /// - Returns: A binding that reads/writes to the domain in the domains array
-    public func binding(for domainID: UUID) -> Binding<BLDomain> {
+    public func binding(forDomain domainID: UUID) -> Binding<BLDomain> {
         Binding(
             get: { [weak self] in
                 guard let self else {
@@ -149,6 +142,31 @@ public final class BLViewModel: ObservableObject {
                 // Update domain in source array
                 if let index = self.domains.firstIndex(where: { $0.id == domainID }) {
                     self.domains[index] = newValue
+                }
+                // Note: If domain not found, the set is silently ignored
+                // This can happen if the domain was deleted while the view was still rendering
+            }
+        )
+    }
+    
+    public func binding(forGroup groupID: UUID) -> Binding<BLDomainGroup> {
+        Binding(
+            get: { [weak self] in
+                guard let self else {
+                    // ViewModel deallocated - return placeholder
+                    return BLDomainGroup(id: groupID, name: "", domainIDs: [])
+                }
+
+                // Find group in source array
+                return self.groups.first(where: { $0.id == groupID })
+                    ?? BLDomainGroup(id: groupID, name: "", domainIDs: [])
+            },
+            set: { [weak self] newValue in
+                guard let self else { return }
+
+                // Update group in source array
+                if let index = self.groups.firstIndex(where: { $0.id == groupID }) {
+                    self.groups[index] = newValue
                 }
                 // Note: If domain not found, the set is silently ignored
                 // This can happen if the domain was deleted while the view was still rendering

@@ -11,7 +11,7 @@ import BlockaliciousKit
 
 struct DomainRow: View {
     @Binding var domain: BLDomain
-    @FocusState.Binding var focusedDomain: BLDomain.ID?
+    @FocusState.Binding var focusedID: UUID?
     
     var body: some View {
         HStack {
@@ -29,7 +29,7 @@ struct DomainRow: View {
             
             TextField("Domain Name", text: $domain.name)
                 .textCase(.lowercase)
-                .focused($focusedDomain, equals: $domain.id)
+                .focused($focusedID, equals: $domain.id)
             
             Spacer()
             

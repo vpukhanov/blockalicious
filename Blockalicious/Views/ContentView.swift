@@ -11,8 +11,11 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             List(selection: $selectedIDs) {
+                ForEach(viewModel.groups) { group in
+                    GroupRow(group: viewModel.binding(forGroup: group.id), focusedID: $focusedID)
+                }
                 ForEach(viewModel.ungroupedDomains) { item in
-                    DomainRow(domain: viewModel.binding(for: item.id), focusedDomain: $focusedID)
+                    DomainRow(domain: viewModel.binding(forDomain: item.id), focusedID: $focusedID)
                 }
             }
             .listStyle(.inset(alternatesRowBackgrounds: true))
