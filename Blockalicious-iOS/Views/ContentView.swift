@@ -57,17 +57,18 @@ struct ContentView: View {
                 HStack {
                     TextField("Domain to block", text: $domainField)
                         .onSubmit(add)
+                        .padding(12)
+                        .glassEffect()
                     
                     Spacer()
                     
                     Button(action: add) {
                         Label("Add", systemImage: "plus")
                     }
-                    .buttonStyle(.bordered)
-                    .tint(.accent)
+                    .buttonBorderShape(.circle)
+                    .buttonStyle(.glassProminent)
+                    .controlSize(.large)
                 }
-                .padding()
-                .glassEffect()
                 .padding()
             }
         }
