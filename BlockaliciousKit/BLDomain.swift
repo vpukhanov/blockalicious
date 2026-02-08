@@ -1,8 +1,7 @@
 import Foundation
 
-/// A value type representing a blocked domain
-/// Swift 6: Converted to struct for Sendable conformance and better value semantics
-public struct BlockedDomain: Identifiable, Codable, Sendable, Hashable {
+/// A value type representing a domain
+public struct BLDomain: Identifiable, Codable, Sendable, Hashable {
     public let id: UUID
     public var name: String
     public var enabled: Bool
@@ -23,4 +22,3 @@ public struct BlockedDomain: Identifiable, Codable, Sendable, Hashable {
         self.faviconURL = faviconURL
     }
 }
-

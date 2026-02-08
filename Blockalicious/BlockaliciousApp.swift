@@ -4,13 +4,13 @@ import BlockaliciousKit
 @main
 struct BlockaliciousApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @StateObject private var blockedDomainsVim = BlockedDomainsVim()
+    @StateObject private var viewModel = BLViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .frame(minWidth: 400, minHeight: 300) // Sensible minimum window size
-                .environmentObject(blockedDomainsVim)
+                .environmentObject(viewModel)
         }
         .commands {
             CommandGroup(replacing: .newItem) {

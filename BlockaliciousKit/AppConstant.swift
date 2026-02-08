@@ -1,7 +1,7 @@
 import Foundation
 
 /// Platform-specific constants for Safari content blocking
-public enum BlockerListConstants {
+public enum AppConstant {
     #if os(iOS)
     public static let contentBlockerBundleId = "ru.pukhanov.Blockalicious.Content-Blocker-iOS"
     public static let securityGroupId = "group.BFJQQT3YDX.Blockalicious"

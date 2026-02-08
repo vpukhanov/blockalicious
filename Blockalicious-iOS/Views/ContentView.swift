@@ -12,19 +12,19 @@ import BlockaliciousKit
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
     
-    @StateObject private var blockedDomainsVim = BlockedDomainsVim()
+    @StateObject private var viewModel = BLViewModel()
     
     @State private var domainField = "*example.com"
     
     var body: some View {
         NavigationView {
             List {
-                if !blockedDomainsVim.contentBlockerEnabled {
+                if !viewModel.contentBlockerEnabled {
                     ExtensionDisabledView()
                 }
                 
                 Section {
-                    ForEach($blockedDomainsVim.domains) { $domain in
+                    ForEach($viewModel.domains) { $domain in
                         HStack {
                             CachedAsyncImage(url: URL(string: domain.favicon)) { image in
                                 image.resizable()
@@ -75,22 +75,22 @@ struct ContentView: View {
         .navigationViewStyle(.stack)
         .onChange(of: scenePhase) {
             if scenePhase == .active {
-                Task { await blockedDomainsVim.updateExtensionState() }
+                Task { await viewModel.updateExtensionState() }
             }
         }
     }
     
     private func add() {
         let _ = withAnimation {
-            blockedDomainsVim.add(domain: domainField)
+            viewModel.add(domain: domainField)
         }
         domainField = "*example.com"
     }
     
     private func delete(_ indexSet: IndexSet) {
         for index in indexSet {
-            let domain = blockedDomainsVim.domains[index]
-            blockedDomainsVim.delete(withID: domain.id)
+            let domain = viewModel.domains[index]
+            viewModel.delete(withID: domain.id)
         }
     }
 }

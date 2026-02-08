@@ -3,7 +3,6 @@ internal import FaviconFinder
 
 /// Service for discovering and caching favicon URLs
 actor FaviconService {
-
     /// Discovers the favicon URL for a domain using FaviconFinder
     /// Returns the largest favicon URL found, or nil if discovery fails
     func discoverFaviconURL(for domain: String) async -> String? {
