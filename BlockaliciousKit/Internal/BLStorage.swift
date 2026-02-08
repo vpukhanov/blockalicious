@@ -9,7 +9,7 @@ import Foundation
 import SafariServices
 
 /// Handles persistent storage
-actor DomainStorage {
+actor BLStorage {
     nonisolated static func loadDomains() -> [BLDomain] {
         // Try loading from app group container
         if let domains = FileManager.default.decode(
@@ -21,7 +21,7 @@ actor DomainStorage {
         }
 
         // Fall back to preseed file
-        if let domains = Bundle(for: DomainStorage.self).decode(
+        if let domains = Bundle(for: BLStorage.self).decode(
             [BLDomain].self,
             from: "DomainsPreseed.json"
         ) {
@@ -31,9 +31,25 @@ actor DomainStorage {
         return []
     }
 
-    func save(domains: [BLDomain]) async {
+    nonisolated static func loadGroups() -> [BLDomainGroup] {
+        // Try loading from app group container
+        if let groups = FileManager.default.decode(
+            [BLDomainGroup].self,
+            from: "Groups.json",
+            in: AppConstant.securityGroupId
+        ) {
+            return groups
+        }
+
+        return []
+    }
+
+    func save(domains: [BLDomain], groups: [BLDomainGroup]) async {
         // Save domains list
         await saveDomainsList(domains)
+
+        // Save groups list
+        await saveGroupsList(groups)
 
         // Generate and save Safari content blocker format
         await writeBlockerList(domains: domains)
@@ -51,6 +67,22 @@ actor DomainStorage {
         guard let url = FileManager.default.containerURL(
             forSecurityApplicationGroupIdentifier: AppConstant.securityGroupId
         )?.appendingPathComponent("Domains.json", isDirectory: false) else {
+            assertionFailure("Could not get app group container URL")
+            return
+        }
+
+        try? data.write(to: url)
+    }
+
+    private func saveGroupsList(_ groups: [BLDomainGroup]) async {
+        guard let data = try? JSONEncoder().encode(groups) else {
+            assertionFailure("Could not encode groups")
+            return
+        }
+
+        guard let url = FileManager.default.containerURL(
+            forSecurityApplicationGroupIdentifier: AppConstant.securityGroupId
+        )?.appendingPathComponent("Groups.json", isDirectory: false) else {
             assertionFailure("Could not get app group container URL")
             return
         }
