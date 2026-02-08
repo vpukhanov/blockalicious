@@ -5,12 +5,12 @@ import BlockaliciousKit
 struct ContentView: View {
     @EnvironmentObject private var viewModel: BLViewModel
 
-    @State private var selectedDomain: BLDomain.ID?
+    @State private var selectedIDs = Set<BLDomain.ID>()
     @FocusState private var focusedDomain: BLDomain.ID?
 
     var body: some View {
         ZStack {
-            List($viewModel.domains, selection: $selectedDomain) { $item in
+            List($viewModel.domains, selection: $selectedIDs) { $item in
                 HStack {
                     CachedAsyncImage(url: URL(string: item.favicon)) { image in
                         image.resizable()
@@ -64,14 +64,10 @@ struct ContentView: View {
     }
 
     private func deleteSelected() {
-        if let id = selectedDomain {
-            viewModel.delete(withID: id)
-        }
+        selectedIDs.forEach(viewModel.delete(withID:))
     }
     
     private func toggleSelected() {
-        if let id = selectedDomain {
-            viewModel.toggle(withID: id)
-        }
+        selectedIDs.forEach(viewModel.toggle(withID:))
     }
 }
