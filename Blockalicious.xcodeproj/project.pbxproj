@@ -115,6 +115,7 @@
 
 /* Begin PBXFileReference section */
 		117D3F872F387DE20039C67B /* BlockaliciousKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlockaliciousKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		117D41C12F38F94C0039C67B /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		11BF5B032853783A00E3490A /* Blockalicious-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blockalicious-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BF5B1B285378E100E3490A /* Content Blocker-iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Content Blocker-iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E0495B27B81DBA00EC9ABF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 		F7E3325527ADAD9600333EDC = {
 			isa = PBXGroup;
 			children = (
+				117D41C12F38F94C0039C67B /* CLAUDE.md */,
 				F7E0495B27B81DBA00EC9ABF /* README.md */,
 				F7E0495C27B81F1F00EC9ABF /* LICENSE.md */,
 				117D3F502F387D630039C67B /* Blockalicious */,
