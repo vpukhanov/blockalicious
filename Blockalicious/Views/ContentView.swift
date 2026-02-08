@@ -11,21 +11,11 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             List(selection: $selectedIDs) {
-                ForEach($viewModel.domains) { $item in
-                    DomainRow(domain: $item, focusedDomain: $focusedDomain)
+                ForEach(viewModel.ungroupedDomains) { item in
+                    DomainRow(domain: viewModel.binding(for: item.id), focusedDomain: $focusedDomain)
                 }
             }
             .listStyle(.inset(alternatesRowBackgrounds: true))
-            .onDeleteCommand(perform: deleteSelected)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: add) {
-                        Label("Add Domain", systemImage: "plus")
-                    }
-                }
-            }
-            // File -> New Domain, or Cmd + N
-            .onReceive(NotificationCenter.default.publisher(for: .requestAddDomain)) { _ in add() }
             
             // Invisible button to toggle the activity state of the selected domain
             // via spacebar. Couldn't find a built-in selected item action in the SwiftUI Table
@@ -37,11 +27,29 @@ struct ContentView: View {
                 ExtensionDisabledView()
             }
         }
+        .onDeleteCommand(perform: deleteSelected)
+        .toolbar {
+            ToolbarItem {
+                Button(action: newGroup) {
+                    Label("New Group", systemImage: "folder.badge.plus")
+                }
+                .disabled(isNewGroupDisabled())
+            }
+            
+            ToolbarItem {
+                Button(action: newDomain) {
+                    Label("New Domain", systemImage: "plus")
+                }
+                .keyboardShortcut("n", modifiers: .command)
+            }
+        }
     }
 
-    private func add() {
+    private func newDomain() {
         focusedDomain = viewModel.add()
     }
+    
+    private func newGroup() {}
 
     private func deleteSelected() {
         selectedIDs.forEach(viewModel.delete(withID:))
@@ -49,5 +57,12 @@ struct ContentView: View {
     
     private func toggleSelected() {
         selectedIDs.forEach(viewModel.toggle(withID:))
+    }
+    
+    /// If no domains are selected, disable the New Group button
+    private func isNewGroupDisabled() -> Bool {
+        viewModel.domains.allSatisfy { domain in
+            !selectedIDs.contains(domain.id)
+        }
     }
 }
