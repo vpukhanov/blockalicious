@@ -21,6 +21,6 @@ struct ExtensionDisabledView: View {
     }
     
     private func goToSafariSettings() {
-        SFSafariApplication.showPreferencesForExtension(withIdentifier: BlockerListWriter.contentBlockerBundleId)
+        SFSafariApplication.showPreferencesForExtension(withIdentifier: BlockerListConstants.contentBlockerBundleId)
     }
 }

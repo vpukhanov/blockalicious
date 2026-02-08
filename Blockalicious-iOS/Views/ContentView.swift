@@ -74,7 +74,7 @@ struct ContentView: View {
         .navigationViewStyle(.stack)
         .onChange(of: scenePhase) {
             if scenePhase == .active {
-                blockedDomainsVim.updateExtensionState()
+                Task { await blockedDomainsVim.updateExtensionState() }
             }
         }
     }

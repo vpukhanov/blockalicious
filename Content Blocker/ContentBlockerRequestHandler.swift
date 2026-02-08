@@ -4,7 +4,7 @@ import BlockaliciousKit
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {
         guard let attachment = NSItemProvider(contentsOf: FileManager.default.containerURL(
-            forSecurityApplicationGroupIdentifier: BlockerListWriter.securityGroupId
+            forSecurityApplicationGroupIdentifier: BlockerListConstants.securityGroupId
         )?.appendingPathComponent("BlockList.json", isDirectory: false)) else {
             fatalError("Unable to form attachment url.")
         }
