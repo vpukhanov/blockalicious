@@ -57,7 +57,8 @@ struct ContentView: View {
             viewModel.domains.contains(where: { $0.id == id })
         }
         if !domainIDs.isEmpty {
-            viewModel.addGroup(domainIDs: domainIDs)
+            selectedIDs.removeAll()
+            focusedID = viewModel.addGroup(domainIDs: domainIDs)
         }
     }
 
