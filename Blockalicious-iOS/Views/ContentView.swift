@@ -28,13 +28,6 @@ struct ContentView: View {
                     Section("Groups") {
                         ForEach(viewModel.groups) { group in
                             GroupRow(group: viewModel.binding(forGroup: group.id))
-                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                    Button(role: .destructive) {
-                                        viewModel.delete(withID: group.id)
-                                    } label: {
-                                        Label("Delete", systemImage: "trash")
-                                    }
-                                }
                         }
                     }
                 }
@@ -43,13 +36,6 @@ struct ContentView: View {
                     Section("Domains") {
                         ForEach(viewModel.ungroupedDomains) { domain in
                             DomainRow(domain: viewModel.binding(forDomain: domain.id))
-                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                    Button(role: .destructive) {
-                                        viewModel.delete(withID: domain.id)
-                                    } label: {
-                                        Label("Delete", systemImage: "trash")
-                                    }
-                                }
                         }
                     }
                 }

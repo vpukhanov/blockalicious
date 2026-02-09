@@ -4,6 +4,8 @@ import BlockaliciousKit
 
 struct DomainRow: View {
     @Binding var domain: BLDomain
+    
+    @EnvironmentObject private var viewModel: BLViewModel
 
     var body: some View {
         HStack {
@@ -25,6 +27,13 @@ struct DomainRow: View {
 
             Toggle("Active", isOn: $domain.enabled)
                 .labelsHidden()
+        }
+        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+            Button(role: .destructive) {
+                viewModel.delete(withID: domain.id)
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
         }
     }
 }

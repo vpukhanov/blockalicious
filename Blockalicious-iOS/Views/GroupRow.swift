@@ -30,6 +30,13 @@ struct GroupRow: View {
                 Toggle("Active", isOn: enabled)
                     .labelsHidden()
             }
+            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                Button(role: .destructive) {
+                    viewModel.delete(withID: group.id)
+                } label: {
+                    Label("Delete", systemImage: "trash")
+                }
+            }
         }
         .selectionDisabled()
     }
