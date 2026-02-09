@@ -34,8 +34,9 @@ struct ContentView: View {
         .toolbar {
             ToolbarItem {
                 Button(action: newGroup) {
-                    Label("New Group", systemImage: "folder.badge.plus")
+                    Label("New Group from Selection", systemImage: "folder.badge.plus")
                 }
+                .keyboardShortcut("n", modifiers: [.command, .control])
                 .disabled(isNewGroupDisabled())
             }
             
@@ -49,7 +50,17 @@ struct ContentView: View {
     }
 
     private func newDomain() {
-        focusedID = viewModel.add()
+        let id = viewModel.add()
+
+        // If a group is selected, create the new domain inside the group
+        if selectedIDs.count == 1 {
+            let selectedID = selectedIDs.first!
+            if viewModel.groups.contains(where: { $0.id == selectedID }) {
+                viewModel.addDomain(id, toGroup: selectedID)
+            }
+        }
+
+        focusedID = id
     }
     
     private func newGroup() {
