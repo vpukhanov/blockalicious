@@ -20,7 +20,39 @@ struct GroupRow: View {
                 DomainRow(domain: viewModel.binding(forDomain: item.id), focusedID: $focusedID)
             }
         } label: {
-            Text(group.name)
+            HStack {
+                Image(systemName: "folder")
+                    .frame(width: 18, height: 18)
+                    .foregroundStyle(.secondary)
+                
+                TextField("Domain Name", text: $group.name)
+                    .focused($focusedID, equals: $group.id)
+                
+                Spacer()
+                
+                if isMixed {
+                    Image(systemName: "diamond.fill")
+                        .opacity(0.3)
+                        .accessibilityHidden(true)
+                }
+                
+                Toggle("Active", isOn: enabled)
+                    .labelsHidden()
+                    .toggleStyle(.switch)
+            }
         }
+    }
+    
+    private var enabled: Binding<Bool> {
+        Binding(
+            get: { viewModel.isGroupEnabled(group) },
+            set: { newValue in
+                viewModel.toggleGroup(withID: group.id, enabled: newValue)
+            }
+        )
+    }
+    
+    private var isMixed: Bool {
+        viewModel.isGroupEnabled(group) && viewModel.domains(in: group).contains { !$0.enabled }
     }
 }

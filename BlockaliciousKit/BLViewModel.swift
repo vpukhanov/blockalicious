@@ -68,18 +68,21 @@ public final class BLViewModel: ObservableObject {
         return blocked.id
     }
 
-    public func delete(withID id: BLDomain.ID) {
+    public func delete(withID id: UUID) {
         domains.removeAll { $0.id == id }
+        groups.removeAll { $0.id == id }
 
-        // Remove from all groups
+        // Remove domain from all groups
         for i in groups.indices {
             groups[i].domainIDs.removeAll { $0 == id }
         }
     }
 
-    public func toggle(withID id: BLDomain.ID) {
+    public func toggle(withID id: UUID) {
         if let index = domains.firstIndex(where: { $0.id == id }) {
             domains[index].enabled.toggle()
+        } else if let index = groups.firstIndex(where: { $0.id == id}) {
+            toggleGroup(withID: groups[index].id, enabled: !isGroupEnabled(groups[index]))
         }
         Task { await save() }
     }
@@ -187,16 +190,9 @@ public final class BLViewModel: ObservableObject {
         
         return group.id
     }
-
-    public func deleteGroup(withID id: BLDomainGroup.ID) {
-        groups.removeAll { $0.id == id }
-        // Domains become ungrouped automatically
-    }
-
-    public func renameGroup(withID id: BLDomainGroup.ID, to newName: String) {
-        if let index = groups.firstIndex(where: { $0.id == id }) {
-            groups[index].name = newName
-        }
+    
+    public func isGroupEnabled(_ group: BLDomainGroup) -> Bool {
+        return domains(in: group).contains { $0.enabled }
     }
 
     public func toggleGroup(withID id: BLDomainGroup.ID, enabled: Bool) {

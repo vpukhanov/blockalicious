@@ -22,7 +22,7 @@ struct ContentView: View {
             
             // Invisible button to toggle the activity state of the selected domain
             // via spacebar. Couldn't find a built-in selected item action in the SwiftUI Table
-            Button("Toggle Selected Domain", action: toggleSelected)
+            Button("Toggle Selected", action: toggleSelected)
                 .keyboardShortcut(.space, modifiers: [])
                 .hidden()
 
