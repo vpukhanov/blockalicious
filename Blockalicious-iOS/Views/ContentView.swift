@@ -11,47 +11,80 @@ import BlockaliciousKit
 
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
-    
-    @StateObject private var viewModel = BLViewModel()
-    
+    @EnvironmentObject private var viewModel: BLViewModel
+
     @State private var domainField = "*example.com"
-    
+    @State private var editMode: EditMode = .inactive
+    @State private var selectedIDs = Set<UUID>()
+
     var body: some View {
         NavigationView {
-            List {
+            List(selection: $selectedIDs) {
                 if !viewModel.contentBlockerEnabled {
                     ExtensionDisabledView()
                 }
-                
-                Section {
-                    ForEach($viewModel.domains) { $domain in
-                        HStack {
-                            CachedAsyncImage(url: URL(string: domain.favicon)) { image in
-                                image.resizable()
-                                    .frame(width: 22, height: 22)
-                                    .clipShape(.rect(cornerRadius: 4))
-                            } placeholder: {
-                                Image(systemName: "questionmark.square.dashed")
-                                    .resizable()
-                                    .fontWeight(.light)
-                                    .frame(width: 22, height: 22)
-                                    .clipShape(.rect(cornerRadius: 4))
-                            }
-                            
-                            Text(domain.name)
-                            
-                            Spacer()
-                            
-                            Toggle("Active", isOn: $domain.enabled)
-                                .labelsHidden()
+
+                if !viewModel.groups.isEmpty {
+                    Section("Groups") {
+                        ForEach(viewModel.groups) { group in
+                            GroupRow(group: viewModel.binding(forGroup: group.id))
+                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                    Button(role: .destructive) {
+                                        viewModel.delete(withID: group.id)
+                                    } label: {
+                                        Label("Delete", systemImage: "trash")
+                                    }
+                                }
                         }
                     }
-                    .onDelete(perform: delete)
+                }
+
+                if !viewModel.ungroupedDomains.isEmpty {
+                    Section("Domains") {
+                        ForEach(viewModel.ungroupedDomains) { domain in
+                            DomainRow(domain: viewModel.binding(forDomain: domain.id))
+                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                    Button(role: .destructive) {
+                                        viewModel.delete(withID: domain.id)
+                                    } label: {
+                                        Label("Delete", systemImage: "trash")
+                                    }
+                                }
+                        }
+                    }
                 }
             }
+            .environment(\.editMode, $editMode)
             .navigationTitle("Blockalicious")
             .toolbar {
-                EditButton()
+                if editMode == .active {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: createGroupFromSelection) {
+                            Label("New Group from Selection", systemImage: "folder.badge.plus")
+                        }
+                        .disabled(!canCreateGroup)
+                    }
+                }
+                
+                // EditButton is very buggy for some reason, so I'm using a custom button
+                ToolbarItem(placement: .topBarTrailing) {
+                    if editMode == .inactive {
+                        Button {
+                            withAnimation {
+                                editMode = .active
+                            }
+                        } label: {
+                            Text("Select")
+                        }
+                    } else {
+                        Button {
+                            withAnimation { editMode = .inactive }
+                        } label: {
+                            Label("Done", systemImage: "checkmark")
+                        }
+                        .buttonStyle(.glassProminent)
+                    }
+                }
             }
             .safeAreaBar(edge: .bottom) {
                 HStack {
@@ -86,11 +119,20 @@ struct ContentView: View {
         }
         domainField = "*example.com"
     }
-    
-    private func delete(_ indexSet: IndexSet) {
-        for index in indexSet {
-            let domain = viewModel.domains[index]
-            viewModel.delete(withID: domain.id)
+
+    private var canCreateGroup: Bool {
+        viewModel.domains.contains { selectedIDs.contains($0.id) }
+    }
+
+    private func createGroupFromSelection() {
+        withAnimation {
+            let domainIDs = selectedIDs.filter { id in
+                viewModel.domains.contains { $0.id == id }
+            }
+            if domainIDs.isEmpty { return }
+
+            let group = viewModel.addGroup(domainIDs: domainIDs)
+            selectedIDs.removeAll()
         }
     }
 }

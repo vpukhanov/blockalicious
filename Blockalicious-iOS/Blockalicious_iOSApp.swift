@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import BlockaliciousKit
 
 @main
-struct Blockalicious_iOSApp: App {    
+struct Blockalicious_iOSApp: App {
+    @StateObject private var viewModel = BLViewModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }
