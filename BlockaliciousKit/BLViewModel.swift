@@ -16,9 +16,9 @@ public final class BLViewModel: ObservableObject {
     private let faviconService = FaviconService()
 
     public init() {
-        // Load domains from app group container or from preseed file
-        domains = BLStorage.loadDomains()
+        // Load groups and domains from storage or preseed file
         groups = BLStorage.loadGroups()
+        domains = BLStorage.loadDomains()
         contentBlockerEnabled = true
 
         // Clean up any orphaned group references

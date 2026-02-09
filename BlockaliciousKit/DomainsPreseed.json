@@ -11,12 +11,27 @@
   },
   {
     "id": "02d7b116-b24b-4f1f-a09d-c9fcf134e188",
-    "name": "*twitter.com",
+    "name": "x.com",
     "enabled": true
   },
   {
     "id": "9a869bbf-e477-4580-bb94-ff1ecbca7e66",
     "name": "*reddit.com",
+    "enabled": true
+  },
+  {
+    "id": "3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
+    "name": "*youtube.com",
+    "enabled": true
+  },
+  {
+    "id": "8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b",
+    "name": "*tiktok.com",
+    "enabled": true
+  },
+  {
+    "id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "name": "*linkedin.com",
     "enabled": true
   }
 ]

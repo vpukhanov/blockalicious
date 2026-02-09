@@ -41,6 +41,25 @@ actor BLStorage {
             return groups
         }
 
+        // If Groups don't exist, but domains exist, this is an old user, and
+        // we don't want to preseed the groups for them
+        guard
+            let domainsFile = FileManager.default.containerURL(
+                forSecurityApplicationGroupIdentifier: AppConstant.securityGroupId
+            )?.appendingPathComponent("Domains.json", isDirectory: false),
+            !FileManager.default.fileExists(atPath: domainsFile.path)
+        else {
+            return []
+        }
+
+        // New user - load preseed groups
+        if let groups = Bundle(for: BLStorage.self).decode(
+            [BLDomainGroup].self,
+            from: "GroupsPreseed.json"
+        ) {
+            return groups
+        }
+
         return []
     }
 
