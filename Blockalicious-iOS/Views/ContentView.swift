@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var domainField = "*example.com"
     @State private var editMode: EditMode = .inactive
     @State private var selectedIDs = Set<UUID>()
+    @State private var groupToRename: BLDomainGroup?
 
     var body: some View {
         NavigationView {
@@ -92,6 +93,10 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(.stack)
+        .sheet(item: $groupToRename) { group in
+            RenameGroupSheet(group: viewModel.binding(forGroup: group.id))
+                .presentationDetents([.medium, .large])
+        }
         .onChange(of: scenePhase) {
             if scenePhase == .active {
                 Task { await viewModel.updateExtensionState() }
@@ -117,8 +122,10 @@ struct ContentView: View {
             }
             if domainIDs.isEmpty { return }
 
-            let group = viewModel.addGroup(domainIDs: domainIDs)
+            let id = viewModel.addGroup(domainIDs: domainIDs)
             selectedIDs.removeAll()
+            
+            groupToRename = viewModel.groups.first { $0.id == id }
         }
     }
 }
