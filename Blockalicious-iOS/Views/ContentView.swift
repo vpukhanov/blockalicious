@@ -13,10 +13,11 @@ struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
     @EnvironmentObject private var viewModel: BLViewModel
 
-    @State private var domainField = "*example.com"
+    @State private var domainField = ""
     @State private var editMode: EditMode = .inactive
     @State private var selectedIDs = Set<UUID>()
     @State private var groupToRename: BLDomainGroup?
+    @FocusState private var domainFieldFocused: Bool
 
     var body: some View {
         NavigationView {
@@ -75,7 +76,8 @@ struct ContentView: View {
             }
             .safeAreaBar(edge: .bottom) {
                 HStack {
-                    TextField("Domain to block", text: $domainField)
+                    TextField("Domain to block", text: $domainField, prompt: Text("Enter domain name"))
+                        .focused($domainFieldFocused)
                         .onSubmit(add)
                         .padding(12)
                         .glassEffect()
@@ -108,7 +110,8 @@ struct ContentView: View {
         let _ = withAnimation {
             viewModel.add(domain: domainField)
         }
-        domainField = "*example.com"
+        domainField = ""
+        domainFieldFocused = false
     }
 
     private var canCreateGroup: Bool {
