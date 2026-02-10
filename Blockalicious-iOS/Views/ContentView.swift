@@ -17,7 +17,6 @@ struct ContentView: View {
     @State private var editMode: EditMode = .inactive
     @State private var selectedIDs = Set<UUID>()
     @State private var groupToRename: BLDomainGroup?
-    @FocusState private var domainFieldFocused: Bool
 
     var body: some View {
         NavigationView {
@@ -77,7 +76,7 @@ struct ContentView: View {
             .safeAreaBar(edge: .bottom) {
                 HStack {
                     TextField("Domain to block", text: $domainField, prompt: Text("Enter domain name"))
-                        .focused($domainFieldFocused)
+                        .textContentType(.URL)
                         .onSubmit(add)
                         .padding(12)
                         .glassEffect()
@@ -111,7 +110,6 @@ struct ContentView: View {
             viewModel.add(domain: domainField)
         }
         domainField = ""
-        domainFieldFocused = false
     }
 
     private var canCreateGroup: Bool {
