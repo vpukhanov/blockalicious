@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SafariServices
+import BlockaliciousKit
 
 struct ExtensionDisabledView: View {
     @Environment(\.openURL) var openURL
@@ -25,9 +27,7 @@ struct ExtensionDisabledView: View {
     }
     
     private func goToSafariSettings() {
-        if let url = URL(string: UIApplication.openSettingsURLString) {
-            openURL(url)
-        }
+        SFSafariSettings.openExtensionsSettings(forIdentifiers: [AppConstant.contentBlockerBundleId])
     }
 }
 
