@@ -9,10 +9,14 @@ struct ExtensionDisabledView: View {
             HStack {
                 Image(systemName: "exclamationmark.triangle.fill")
                 Text("Safari extension is disabled")
+                
                 Spacer()
-                Button("Go to Safari settings…", action: goToSafariSettings)
-                    .buttonStyle(.glassProminent)
-                    .buttonBorderShape(.capsule)
+
+                Button("Go to Safari settings…") {
+                    Task { await goToSafariSettings() }
+                }
+                .buttonStyle(.glassProminent)
+                .buttonBorderShape(.capsule)
             }
             .padding(.horizontal)
             .padding(.vertical, 4)
@@ -21,7 +25,7 @@ struct ExtensionDisabledView: View {
         }
     }
     
-    private func goToSafariSettings() {
-        SFSafariApplication.showPreferencesForExtension(withIdentifier: AppConstant.contentBlockerBundleId)
+    private func goToSafariSettings() async {
+        try? await SFSafariApplication.showPreferencesForExtension(withIdentifier: AppConstant.contentBlockerBundleId)
     }
 }
