@@ -8,24 +8,17 @@ struct ContentView: View {
     @FocusState private var focusedID: UUID?
 
     var body: some View {
-        ZStack {
-            List(selection: $selectedIDs) {
-                ForEach(viewModel.groups) { group in
-                    GroupRow(group: viewModel.binding(forGroup: group.id), focusedID: $focusedID)
-                }
-                ForEach(viewModel.ungroupedDomains) { item in
-                    DomainRow(domain: viewModel.binding(forDomain: item.id), focusedID: $focusedID)
-                }
+        List(selection: $selectedIDs) {
+            ForEach(viewModel.groups) { group in
+                GroupRow(group: viewModel.binding(forGroup: group.id), focusedID: $focusedID)
             }
-            .listStyle(.inset(alternatesRowBackgrounds: true))
-            
-            // Invisible button to toggle the activity state of the selected domain
-            // via spacebar. Couldn't find a built-in selected item action in the SwiftUI Table
-            Button("Toggle Selected", action: toggleSelected)
-                .keyboardShortcut(.space, modifiers: [])
-                .hidden()
+            ForEach(viewModel.ungroupedDomains) { item in
+                DomainRow(domain: viewModel.binding(forDomain: item.id), focusedID: $focusedID)
+            }
         }
+        .listStyle(.inset(alternatesRowBackgrounds: true))
         .onDeleteCommand(perform: deleteSelected)
+        .onKeyPress(.space, action: toggleSelected)
         .toolbar {
             ToolbarItem {
                 Button(action: newGroup) {
@@ -77,8 +70,13 @@ struct ContentView: View {
         selectedIDs.forEach(viewModel.delete(withID:))
     }
     
-    private func toggleSelected() {
-        selectedIDs.forEach(viewModel.toggle(withID:))
+    private func toggleSelected() -> KeyPress.Result {
+        if selectedIDs.count > 0 && focusedID == nil {
+            selectedIDs.forEach(viewModel.toggle(withID:))
+            return .handled
+        } else {
+            return .ignored
+        }
     }
     
     /// If no domains are selected, disable the New Group button
