@@ -114,15 +114,11 @@ public final class BLViewModel {
 
     public func binding(forDomain domainID: UUID) -> Binding<BLDomain> {
         Binding(
-            get: { [weak self] in
-                guard let self else {
-                    return BLDomain(id: domainID, name: "", enabled: false)
-                }
-                return self.domains.first(where: { $0.id == domainID })
+            get: {
+                self.domains.first(where: { $0.id == domainID })
                     ?? BLDomain(id: domainID, name: "", enabled: false)
             },
-            set: { [weak self] newValue in
-                guard let self else { return }
+            set: { newValue in
                 if let index = self.domains.firstIndex(where: { $0.id == domainID }) {
                     self.domains[index] = newValue
                 }
@@ -132,15 +128,11 @@ public final class BLViewModel {
 
     public func binding(forGroup groupID: UUID) -> Binding<BLDomainGroup> {
         Binding(
-            get: { [weak self] in
-                guard let self else {
-                    return BLDomainGroup(id: groupID, name: "", domainIDs: [])
-                }
-                return self.groups.first(where: { $0.id == groupID })
+            get: {
+                self.groups.first(where: { $0.id == groupID })
                     ?? BLDomainGroup(id: groupID, name: "", domainIDs: [])
             },
-            set: { [weak self] newValue in
-                guard let self else { return }
+            set: { newValue in
                 if let index = self.groups.firstIndex(where: { $0.id == groupID }) {
                     self.groups[index] = newValue
                 }
