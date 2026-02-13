@@ -3,8 +3,7 @@ import CachedAsyncImage
 import BlockaliciousKit
 
 struct ContentView: View {
-    @EnvironmentObject private var viewModel: BLViewModel
-
+    @Environment(BLViewModel.self) private var viewModel
     @State private var selectedIDs = Set<UUID>()
     @FocusState private var focusedID: UUID?
 

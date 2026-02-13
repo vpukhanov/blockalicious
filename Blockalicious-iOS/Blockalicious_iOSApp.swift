@@ -10,12 +10,12 @@ import BlockaliciousKit
 
 @main
 struct Blockalicious_iOSApp: App {
-    @StateObject private var viewModel = BLViewModel()
+    @State private var viewModel = BLViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(viewModel)
+                .environment(viewModel)
         }
     }
 }

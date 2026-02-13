@@ -1,48 +1,36 @@
 import Foundation
-import Combine
 import SwiftUI
 import SafariServices
 
 /// Main view model of the app
+@Observable
 @MainActor
-public final class BLViewModel: ObservableObject {
-    @Published public var domains: [BLDomain]
-    @Published public var groups: [BLDomainGroup]
-    @Published public var contentBlockerEnabled: Bool
+public final class BLViewModel {
+    public var domains: [BLDomain] {
+        didSet { scheduleSave() }
+    }
+    public var groups: [BLDomainGroup] {
+        didSet { scheduleSave() }
+    }
+    public var contentBlockerEnabled: Bool
 
-    private var cancellable = Set<AnyCancellable>()
-    private var groupsCancellable: AnyCancellable?
-    private let storage = BLStorage()
-    private let faviconService = FaviconService()
+    @ObservationIgnored private var saveTask: Task<Void, Never>?
+    @ObservationIgnored private let storage = BLStorage()
+    @ObservationIgnored private let faviconService = FaviconService()
 
     public init() {
-        // Load groups and domains from storage or preseed file
-        groups = BLStorage.loadGroups()
-        domains = BLStorage.loadDomains()
+        // Clean up orphaned references on local copies before assigning
+        // (direct assignment in init does not trigger didSet)
+        var loadedGroups = BLStorage.loadGroups()
+        let loadedDomains = BLStorage.loadDomains()
+        let domainIDs = Set(loadedDomains.map { $0.id })
+        for i in loadedGroups.indices {
+            loadedGroups[i].domainIDs.removeAll { !domainIDs.contains($0) }
+        }
+
+        domains = loadedDomains
+        groups = loadedGroups
         contentBlockerEnabled = true
-
-        // Clean up any orphaned group references
-        cleanupOrphanedReferences()
-
-        // Autosave changes when domains are edited by the user
-        cancellable.insert(
-            $domains
-                .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
-                .sink { [weak self] _ in
-                    guard let self else { return }
-                    Task { await self.save() }
-                }
-        )
-
-        // Autosave changes when groups are edited by the user
-        cancellable.insert(
-            $groups
-                .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
-                .sink { [weak self] _ in
-                    guard let self else { return }
-                    Task { await self.save() }
-                }
-        )
 
         // Load initial extension state
         Task { await updateExtensionState() }
@@ -81,16 +69,8 @@ public final class BLViewModel: ObservableObject {
     public func toggle(withID id: UUID) {
         if let index = domains.firstIndex(where: { $0.id == id }) {
             domains[index].enabled.toggle()
-        } else if let index = groups.firstIndex(where: { $0.id == id}) {
+        } else if let index = groups.firstIndex(where: { $0.id == id }) {
             toggleGroup(withID: groups[index].id, enabled: !isGroupEnabled(groups[index]))
-        }
-        Task { await save() }
-    }
-
-    public func save() async {
-        Task { [domains, groups] in
-            await storage.save(domains: domains, groups: groups)
-            await updateExtensionState()
         }
     }
 
@@ -101,11 +81,16 @@ public final class BLViewModel: ObservableObject {
 
     /// Discovers and caches favicon URLs for all domains that don't have one
     public func discoverMissingFavicons() {
+        // Capture IDs to avoid index invalidation during iteration
+        let idsToDiscover = domains.filter { $0.faviconURL == nil }.map(\.id)
         Task {
-            for i in domains.indices where domains[i].faviconURL == nil {
-                // Discover favicon URL in background
-                if let faviconURL = await faviconService.discoverFaviconURL(for: domains[i].basename) {
-                    domains[i].faviconURL = faviconURL
+            for id in idsToDiscover {
+                guard let domain = domains.first(where: { $0.id == id }) else { return }
+
+                if let faviconURL = await faviconService.discoverFaviconURL(for: domain.basename) {
+                    if let currentIndex = domains.firstIndex(where: { $0.id == id }) {
+                        domains[currentIndex].faviconURL = faviconURL
+                    }
                 }
 
                 // Small delay between requests to avoid overwhelming the network
@@ -131,48 +116,34 @@ public final class BLViewModel: ObservableObject {
         Binding(
             get: { [weak self] in
                 guard let self else {
-                    // ViewModel deallocated - return placeholder
                     return BLDomain(id: domainID, name: "", enabled: false)
                 }
-
-                // Find domain in source array
                 return self.domains.first(where: { $0.id == domainID })
                     ?? BLDomain(id: domainID, name: "", enabled: false)
             },
             set: { [weak self] newValue in
                 guard let self else { return }
-
-                // Update domain in source array
                 if let index = self.domains.firstIndex(where: { $0.id == domainID }) {
                     self.domains[index] = newValue
                 }
-                // Note: If domain not found, the set is silently ignored
-                // This can happen if the domain was deleted while the view was still rendering
             }
         )
     }
-    
+
     public func binding(forGroup groupID: UUID) -> Binding<BLDomainGroup> {
         Binding(
             get: { [weak self] in
                 guard let self else {
-                    // ViewModel deallocated - return placeholder
                     return BLDomainGroup(id: groupID, name: "", domainIDs: [])
                 }
-
-                // Find group in source array
                 return self.groups.first(where: { $0.id == groupID })
                     ?? BLDomainGroup(id: groupID, name: "", domainIDs: [])
             },
             set: { [weak self] newValue in
                 guard let self else { return }
-
-                // Update group in source array
                 if let index = self.groups.firstIndex(where: { $0.id == groupID }) {
                     self.groups[index] = newValue
                 }
-                // Note: If domain not found, the set is silently ignored
-                // This can happen if the domain was deleted while the view was still rendering
             }
         )
     }
@@ -183,14 +154,14 @@ public final class BLViewModel: ObservableObject {
     public func addGroup(domainIDs: Set<UUID>, name: String = "New Group") -> BLDomainGroup.ID {
         let group = BLDomainGroup(name: name)
         groups.append(group)
-        
+
         for id in domainIDs {
             addDomain(id, toGroup: group.id)
         }
-        
+
         return group.id
     }
-    
+
     public func isGroupEnabled(_ group: BLDomainGroup) -> Bool {
         return domains(in: group).contains { $0.enabled }
     }
@@ -203,8 +174,6 @@ public final class BLViewModel: ObservableObject {
                 domains[index].enabled = enabled
             }
         }
-
-        Task { await save() }
     }
 
     public func addDomain(_ domainID: UUID, toGroup groupID: BLDomainGroup.ID) {
@@ -221,10 +190,15 @@ public final class BLViewModel: ObservableObject {
         }
     }
 
-    private func cleanupOrphanedReferences() {
-        let domainIDs = Set(domains.map { $0.id })
-        for i in groups.indices {
-            groups[i].domainIDs.removeAll { !domainIDs.contains($0) }
+    // MARK: - Private
+
+    private func scheduleSave() {
+        saveTask?.cancel()
+        saveTask = Task {
+            try? await Task.sleep(for: .milliseconds(500))
+            guard !Task.isCancelled else { return }
+            await storage.save(domains: domains, groups: groups)
+            await updateExtensionState()
         }
     }
 }

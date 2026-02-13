@@ -3,7 +3,8 @@ import BlockaliciousKit
 
 struct GroupRow: View {
     @Binding var group: BLDomainGroup
-    @EnvironmentObject private var viewModel: BLViewModel
+
+    @Environment(BLViewModel.self) private var viewModel
 
     var body: some View {
         DisclosureGroup {

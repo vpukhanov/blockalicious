@@ -4,8 +4,8 @@ import BlockaliciousKit
 
 struct DomainRow: View {
     @Binding var domain: BLDomain
-    
-    @EnvironmentObject private var viewModel: BLViewModel
+
+    @Environment(BLViewModel.self) private var viewModel
 
     var body: some View {
         HStack {

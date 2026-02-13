@@ -11,15 +11,14 @@ import BlockaliciousKit
 
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
-    @EnvironmentObject private var viewModel: BLViewModel
-
+    @Environment(BLViewModel.self) private var viewModel
     @State private var domainField = ""
     @State private var editMode: EditMode = .inactive
     @State private var selectedIDs = Set<UUID>()
     @State private var groupToRename: BLDomainGroup?
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(selection: $selectedIDs) {
                 if !viewModel.contentBlockerEnabled {
                     ExtensionDisabledView()
@@ -93,7 +92,6 @@ struct ContentView: View {
                 .padding()
             }
         }
-        .navigationViewStyle(.stack)
         .sheet(item: $groupToRename) { group in
             RenameGroupSheet(group: viewModel.binding(forGroup: group.id))
                 .presentationDetents([.medium, .large])
@@ -129,8 +127,4 @@ struct ContentView: View {
             groupToRename = viewModel.groups.first { $0.id == id }
         }
     }
-}
-
-#Preview {
-    ContentView()
 }
