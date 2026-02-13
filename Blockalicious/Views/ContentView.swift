@@ -24,10 +24,6 @@ struct ContentView: View {
             Button("Toggle Selected", action: toggleSelected)
                 .keyboardShortcut(.space, modifiers: [])
                 .hidden()
-
-            if !viewModel.contentBlockerEnabled {
-                ExtensionDisabledView()
-            }
         }
         .onDeleteCommand(perform: deleteSelected)
         .toolbar {
@@ -44,6 +40,11 @@ struct ContentView: View {
                     Label("New Domain", systemImage: "plus")
                 }
                 .keyboardShortcut("n", modifiers: .command)
+            }
+        }
+        .safeAreaInset(edge: .bottom) {
+            if !viewModel.contentBlockerEnabled {
+                ExtensionDisabledView()
             }
         }
     }

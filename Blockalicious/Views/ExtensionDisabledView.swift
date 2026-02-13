@@ -4,25 +4,21 @@ import BlockaliciousKit
 
 struct ExtensionDisabledView: View {
     var body: some View {
-        VStack {
+        HStack {
+            Label("Safari extension is disabled", systemImage: "exclamationmark.triangle.fill")
+            
             Spacer()
-            HStack {
-                Image(systemName: "exclamationmark.triangle.fill")
-                Text("Safari extension is disabled")
-                
-                Spacer()
 
-                Button("Go to Safari settings…") {
-                    Task { await goToSafariSettings() }
-                }
-                .buttonStyle(.glassProminent)
-                .buttonBorderShape(.capsule)
+            Button("Go to Safari settings…") {
+                Task { await goToSafariSettings() }
             }
-            .padding(.horizontal)
-            .padding(.vertical, 4)
-            .background(Color(nsColor: .controlBackgroundColor))
-            .overlay(Divider(), alignment: .top)
+            .buttonStyle(.glassProminent)
+            .buttonBorderShape(.capsule)
         }
+        .padding(.horizontal)
+        .padding(.vertical, 4)
+        .background(.bar)
+        .overlay(Divider(), alignment: .top)
     }
     
     private func goToSafariSettings() async {
