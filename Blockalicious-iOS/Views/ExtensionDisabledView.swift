@@ -15,7 +15,9 @@ struct ExtensionDisabledView: View {
     var body: some View {
         Section {
             VStack(alignment: .leading, spacing: 12) {
-                Text("\(Image(systemName: "exclamationmark.triangle.fill")) Safari extension is currently disabled").bold()
+                Label("Safari extension is currently disabled", systemImage: "exclamationmark.circle.fill")
+                    .font(.headline)
+                    .labelIconToTitleSpacing(6)
                 Text("Enable the Blockalicious extension for the blocking rules to take effect")
                 Text("Go to Settings \(Image(systemName: "arrow.right")) Apps \(Image(systemName: "arrow.right")) Safari \(Image(systemName: "arrow.right")) Extensions and toggle Blockalicious on")
             }

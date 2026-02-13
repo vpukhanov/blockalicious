@@ -88,6 +88,7 @@ struct ContentView: View {
                     .buttonBorderShape(.circle)
                     .buttonStyle(.glassProminent)
                     .controlSize(.large)
+                    .disabled(domainField.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 }
                 .padding()
             }
@@ -104,9 +105,7 @@ struct ContentView: View {
     }
     
     private func add() {
-        let _ = withAnimation {
-            viewModel.add(domain: domainField)
-        }
+        withAnimation { _ = viewModel.add(domain: domainField) }
         domainField = ""
     }
 
