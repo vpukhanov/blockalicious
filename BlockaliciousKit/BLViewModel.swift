@@ -85,7 +85,7 @@ public final class BLViewModel {
         let idsToDiscover = domains.filter { $0.faviconURL == nil }.map(\.id)
         Task {
             for id in idsToDiscover {
-                guard let domain = domains.first(where: { $0.id == id }) else { return }
+                guard let domain = domains.first(where: { $0.id == id }) else { continue }
 
                 if let faviconURL = await faviconService.discoverFaviconURL(for: domain.basename) {
                     if let currentIndex = domains.firstIndex(where: { $0.id == id }) {
