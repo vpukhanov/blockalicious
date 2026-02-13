@@ -24,18 +24,19 @@ struct GroupRow: View {
                     .frame(width: 18, height: 18)
                     .foregroundStyle(.secondary)
                 
-                TextField("Domain Name", text: $group.name)
+                TextField("Group Name", text: $group.name)
                     .focused($focusedID, equals: $group.id)
                 
                 Spacer()
                 
                 if isMixed {
                     Image(systemName: "diamond.fill")
-                        .opacity(0.3)
-                        .accessibilityHidden(true)
+                        .opacity(0.5)
+                        .accessibilityLabel("Some domains disabled")
                 }
                 
                 Toggle("Active", isOn: enabled)
+                    .accessibilityLabel("Toggle group \(group.name)")
                     .labelsHidden()
                     .toggleStyle(.switch)
             }

@@ -24,11 +24,12 @@ struct GroupRow: View {
 
                 if isMixed {
                     Image(systemName: "diamond.fill")
-                        .opacity(0.3)
-                        .accessibilityHidden(true)
+                        .opacity(0.5)
+                        .accessibilityLabel("Some domains disabled")
                 }
 
                 Toggle("Active", isOn: enabled)
+                    .accessibilityLabel("Toggle group \(group.name)")
                     .labelsHidden()
             }
             .swipeActions(edge: .trailing, allowsFullSwipe: true) {

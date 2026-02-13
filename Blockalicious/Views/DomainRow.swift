@@ -19,13 +19,16 @@ struct DomainRow: View {
                 image.resizable()
                     .frame(width: 18, height: 18)
                     .clipShape(.rect(cornerRadius: 4))
+                    .accessibilityHidden(true)
             } placeholder: {
                 Image(systemName: "questionmark.square.dashed")
                     .resizable()
                     .fontWeight(.light)
                     .frame(width: 18, height: 18)
                     .clipShape(.rect(cornerRadius: 4))
+                    .accessibilityHidden(true)
             }
+            .accessibilityHidden(true)
             
             TextField("Domain Name", text: $domain.name)
                 .textCase(.lowercase)
@@ -34,6 +37,7 @@ struct DomainRow: View {
             Spacer()
             
             Toggle("Active", isOn: $domain.enabled)
+                .accessibilityLabel("Toggle \(domain.name)")
                 .labelsHidden()
                 .toggleStyle(.switch)
         }
